@@ -1,6 +1,10 @@
+import MainComponent from './MainComponent.js'
+
 function App() {
     return (
-        <div>Hello, World!</div>
+        <div>
+        <MainComponent />
+        </div>
     );
 }
 
