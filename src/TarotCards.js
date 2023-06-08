@@ -11,12 +11,6 @@ import TheHermit from './images/TheHermit.png';
 import TheWheelOfFortune from './images/TheWheelOfFortune.png'
 import Justice from './images/Justice.png'
 
-
-
-
-
-
-
 const tarotCards = [
     {
         name: 'The Fool',
