@@ -14,15 +14,15 @@ function TarotCardGenerator() {
   const handleSelectCards = () => {
     if (inputValue) {
       const numCards = parseInt(inputValue);
-      
+
       if (numCards <= 0 || numCards > tarotCards.length) {
         alert("Invalid number of cards. Please enter a value between 1 and " + tarotCards.length);
         return;
       }
-      
+
       const cards = [];
       const indices = new Set();
-      
+
       while (cards.length < numCards) {
         const index = Math.floor(Math.random() * tarotCards.length);
         if (!indices.has(index)) {
@@ -30,14 +30,13 @@ function TarotCardGenerator() {
           indices.add(index);
         }
       }
-      
+
       setSelectedCards(cards);
       setRandomCard(null);
       setInputValue("");
       document.documentElement.style.setProperty('--num-cards', numCards);
     }
   };
-  
 
   const handleGenerateRandomCard = () => {
     const currentCardIndex = randomCard ? tarotCards.findIndex((card) => card.name === randomCard.name) : -1;
@@ -100,3 +99,5 @@ function TarotCardGenerator() {
 }
 
 export default TarotCardGenerator;
+
+// hiiii
