@@ -11,6 +11,10 @@ import TheHermit from './images/TheHermit.png';
 import TheWheelOfFortune from './images/TheWheelOfFortune.png'
 import Justice from './images/Justice.png'
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ebdd4b806dbe95f970d328e7fa8f7fcf08ab6b3b
 const tarotCards = [
     {
         name: 'The Fool',
@@ -84,11 +88,6 @@ const tarotCards = [
         keywords: 'Balance, Fairness, Impartiality',
         image: Justice
     },
-
-
-
-
 ];
-
 
 export default tarotCards;
