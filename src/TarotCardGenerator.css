@@ -40,23 +40,33 @@ h1 {
 }
 
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .card {
-  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+  max-width: 300px;
+  text-align: center;
+  flex-basis: calc(100% / var(--num-cards));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card h2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  padding: 10px;
-  font-size: 16px;
-  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0;
+  font-size: 16px; 
+  white-space: pre-line;
+
 }
 
 
@@ -70,7 +80,6 @@ h1 {
   max-width: 100%;
   margin: 5px 0;
   font-size: 14px;
-  padding: 10px;
 
 }
 

@@ -6,6 +6,7 @@ import TheEmperor from './images/TheEmperor.png';
 import TheHierophant from './images/TheHierophant.png';
 import TheLovers from './images/TheLovers.png';
 import TheChariot from './images/TheChariot.png';
+<<<<<<< HEAD
 import Strength from './images/Strength.png';
 import TheHermit from './images/TheHermit.png';
 import TheWheelOfFortune from './images/TheWheelOfFortune.png'
@@ -16,6 +17,17 @@ import Temperance from './images/Temperance.png'
 import TheDevil from './images/TheDevil.png'
 import TheTower from './images/TheTower.png'
 
+=======
+// import Strength from './images/Strength.png';
+import TheHermit from './images/TheHermit.png';
+import TheWheelOfFortune from './images/TheWheelOfFortune.png'
+import Justice from './images/Justice.png'
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> ebdd4b806dbe95f970d328e7fa8f7fcf08ab6b3b
+>>>>>>> 3f12132777306fbe104ce00de99697c602854946
 const tarotCards = [
     {
         name: 'The Fool',
@@ -69,7 +81,11 @@ const tarotCards = [
         name: 'Strength',
         description: 'Strength symbolizes inner courage, resilience, and the power to overcome challenges by harnessing one\'s inner strength and gentle persuasion rather than brute force.',
         keywords: 'Innter Strength, Patience, Gentle Power',
+<<<<<<< HEAD
         image: Strength
+=======
+        image: ''
+>>>>>>> 3f12132777306fbe104ce00de99697c602854946
     },
     {
         name: 'The Hermit',
@@ -89,6 +105,7 @@ const tarotCards = [
         keywords: 'Balance, Fairness, Impartiality',
         image: Justice
     },
+<<<<<<< HEAD
     {
         name: 'The Hanged Man',
         description: 'The Hanged Man represents surrender, suspension, and gaining new perspectives through self-reflection and sacrifice.',
@@ -120,6 +137,8 @@ const tarotCards = [
         image: TheTower
     },
     
+=======
+>>>>>>> 3f12132777306fbe104ce00de99697c602854946
 ];
 
 export default tarotCards;
