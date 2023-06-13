@@ -15,6 +15,12 @@ import Death from './images/Death.png'
 import Temperance from './images/Temperance.png'
 import TheDevil from './images/TheDevil.png'
 import TheTower from './images/TheTower.png'
+import TheStar from './images/TheStar.png'
+import TheMoon from './images/TheMoon.png'
+import TheSun from './images/TheSun.png'
+import Judgment from './images/Judgment.png'
+import TheWorld from './images/TheWorld.png'
+
 
 
 const tarotCards = [
@@ -69,13 +75,13 @@ const tarotCards = [
     {
         name: 'Strength',
         description: 'Strength symbolizes inner courage, resilience, and the power to overcome challenges by harnessing one\'s inner strength and gentle persuasion rather than brute force.',
-        keywords: 'Innter Strength, Patience, Gentle Power',
+        keywords: 'Inner Strength, Patience, Gentle Power',
         image: Strength
     },
     {
         name: 'The Hermit',
         description: 'The Hermit symbolizes introspection, solitude, and inner guidance.',
-        keywords: 'Isolation, introspection, wisdom',
+        keywords: 'Isolation, Introspection, Wisdom',
         image: TheHermit
     },
     {
@@ -93,33 +99,64 @@ const tarotCards = [
     {
         name: 'The Hanged Man',
         description: 'The Hanged Man represents surrender, suspension, and gaining new perspectives through self-reflection and sacrifice.',
-        keywords: 'Surrender, introspection, enlightenment',
+        keywords: 'Surrender, Introspection, Enlightenment',
         image: TheHangedMan
     },
     {
         name: 'Death',
         description: 'The Death tarot card represents profound transformation, the inevitability of change, and the end of one chapter leading to the beginning of another.',
-        keywords: 'Transformation, rebirth, transition.',
+        keywords: 'Transformation, Rebirth, Transition',
         image: Death
     },
     {
         name: 'Temperance',
         description: 'Temperance represents the harmonious blending of opposites, moderation, and finding balance amidst diversity and conflicting forces.',
-        keywords: 'Balance, harmony, integration.',
+        keywords: 'Balance, Harmony, Integration',
         image: Temperance
     },
     {
         name: 'The Devil',
         description: 'The Devil represents the forces of temptation, bondage, and the exploration of our darker impulses and desires.',
-        keywords: 'Temptation, bondage, liberation.',
+        keywords: 'Temptation, Bondage, Liberation.',
         image: TheDevil
     },
     {
         name: 'The Tower',
         description: 'The Tower represents sudden and disruptive change, destruction of old structures, and the opportunity for profound personal growth and transformation.',
-        keywords: 'Crisis, upheaval, revelation.',
+        keywords: 'Crisis, Upheaval, Revelation.',
         image: TheTower
     },
+    {
+        name: 'The Star',
+        description: 'The Star represents hope, inspiration, and spiritual guidance.',
+        keywords: 'Hope, Inspiration, Guidance.',
+        image: TheStar
+    },
+    {
+        name: 'The Moon',
+        description: 'The Moon represents intuition, subconsciousness, and the exploration of the mysterious realms within.',
+        keywords: 'Mystery, Illusion, Subconscious',
+        image: TheMoon
+    },
+    {
+        name: 'The Sun',
+        description: 'The Sun represents radiant vitality, joy, and enlightenment, symbolizing the power of optimism and the triumph of light over darkness.',
+        keywords: 'Illumination, Vitality, Joy',
+        image: TheSun
+    },
+    {
+        name: 'Judgement',
+        description: 'Judgment represents a spiritual awakening and transformation, symbolizing rebirth, introspection, and divine judgment.',
+        keywords: 'Rebirth, Redemption, Awakening',
+        image: Judgment
+    },
+    {
+        name: 'The World',
+        description: 'The World represents completion, wholeness, and the harmonious integration of all aspects of life into a unified whole.',
+        keywords: 'Completion, Unity, Fulfillment',
+        image: TheWorld
+    },
+    
     
 ];
 
