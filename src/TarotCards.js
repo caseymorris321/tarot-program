@@ -1,5 +1,5 @@
-import TheMagician from './images/TheMagician.png'; // Replace tarotCard.jpg with your actual image file name and path
-import TheFool from './images/TheFool.png'; // Replace tarotCard.jpg with your actual image file name and path
+import TheMagician from './images/TheMagician.png';
+import TheFool from './images/TheFool.png'; 
 import TheHighPriestess from './images/TheHighPriestess.png';
 import TheEmpress from './images/TheEmpress.png';
 import TheEmperor from './images/TheEmperor.png';
@@ -20,7 +20,20 @@ import TheMoon from './images/TheMoon.png'
 import TheSun from './images/TheSun.png'
 import Judgment from './images/Judgment.png'
 import TheWorld from './images/TheWorld.png'
-
+import AceOfWands from './images/AceOfWands.png'
+import TwoOfWands from './images/TwoOfWands.png'
+import ThreeOfWands from './images/ThreeOfWands.png'
+import FourOfWands from './images/FourOfWands.png'
+import FiveOfWands from './images/FiveOfWands.png'
+import SixOfWands from './images/SixOfWands.png'
+// import SevenOfWands from './images/SevenOfWands.png'
+// import EightOfWands from './images/EightOfWands.png'
+// import NineOfWands from './images/NineOfWands.png'
+// import TenOfWands from './images/TenOfWands.png'
+// import PageOfWands from './images/PageOfWands.png'
+// import KnightOfWands from './images/KnightOfWands.png'
+// import QueenOfWands from './images/QueenOfWands.png'
+// import KingOfWands from './images/KingOfWands.png'
 
 
 const tarotCards = [
@@ -85,7 +98,7 @@ const tarotCards = [
         image: TheHermit
     },
     {
-        name: 'The Wheel of Fortune',
+        name: 'Wheel of Fortune',
         description: 'The Wheel of Fortune represents the ever-changing cycles of life and destiny.',
         keywords: 'Destiny, Change, Luck',
         image: TheWheelOfFortune
@@ -146,7 +159,7 @@ const tarotCards = [
     },
     {
         name: 'Judgement',
-        description: 'Judgment represents a spiritual awakening and transformation, symbolizing rebirth, introspection, and divine judgment.',
+        description: 'Judgement represents a spiritual awakening and transformation, symbolizing rebirth, introspection, and divine judgment.',
         keywords: 'Rebirth, Redemption, Awakening',
         image: Judgment
     },
@@ -156,8 +169,49 @@ const tarotCards = [
         keywords: 'Completion, Unity, Fulfillment',
         image: TheWorld
     },
-    
-    
+    {
+        name: 'Ace of Wands',
+        description: 'Ace of Wands represents the spark of inspiration and potential for new beginnings in creative endeavors and passionate pursuits.',
+        keywords: 'Inspiration, Potential, New beginnings',
+        image: AceOfWands
+    },
+    {
+        name: 'Two of Wands',
+        description: 'Two of Wands represents a pivotal moment of contemplation and decision-making, as one stands at the precipice of possibilities, weighing options and envisioning future endeavors.',
+        keywords: 'Contemplation, Decision-making, Possibilities',
+        image: TwoOfWands
+    },
+    {
+        name: 'Three of Wands',
+        description: 'Three of Wands signifies a moment of anticipation and progress, as one looks out onto the horizon, ready to embark on a journey of exploration and expansion, fueled by foresight and ambition.',
+        keywords: 'Anticipation, Progress, Exploration',
+        image: ThreeOfWands
+    },
+    {
+        name: 'Four of Wands',
+        description: 'Four of Wands signifies a joyous celebration of stability and harmony, where individuals come together in unity to honor accomplishments and create an atmosphere of blissful contentment.',
+        keywords: 'Celebration, Stability, Unity',
+        image: FourOfWands
+    },
+    {
+        name: 'Five of Wands',
+        description: 'Five of Wands represents a dynamic and spirited clash of energies, as individuals engage in lively competition, each asserting their ideas and passions, creating a vibrant and challenging environment of growth and self-discovery.',
+        keywords: 'Competition, Energy, Growth',
+        image: FiveOfWands
+    },
+    {
+        name: 'Six of Wands',
+        description: 'Six of Wands represents victory, recognition, and celebration of success.',
+        keywords: 'Victory, Recognition, Celebration',
+        image: SixOfWands
+    },
+/*     {
+        name: 'Seven of Wands',
+        description: 'Seven of Wands represents courageously defending one\'s position against challenges and opposition.',
+        keywords: 'Courage, Defiance, Opposition',
+        image: SevenOfWands
+    },
+ */
 ];
 
 export default tarotCards;

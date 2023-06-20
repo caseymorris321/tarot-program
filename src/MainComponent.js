@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import tarotCards from './TarotCards';
-import './TarotCardGenerator.css'; // Import the CSS file for styling
+import './TarotCardGenerator.css';
 
 function TarotCardGenerator() {
   const [selectedCards, setSelectedCards] = useState([]);
@@ -99,5 +99,3 @@ function TarotCardGenerator() {
 }
 
 export default TarotCardGenerator;
-
-// hiiii
