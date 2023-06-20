@@ -26,14 +26,14 @@ import ThreeOfWands from './images/ThreeOfWands.png'
 import FourOfWands from './images/FourOfWands.png'
 import FiveOfWands from './images/FiveOfWands.png'
 import SixOfWands from './images/SixOfWands.png'
-// import SevenOfWands from './images/SevenOfWands.png'
-// import EightOfWands from './images/EightOfWands.png'
-// import NineOfWands from './images/NineOfWands.png'
-// import TenOfWands from './images/TenOfWands.png'
-// import PageOfWands from './images/PageOfWands.png'
-// import KnightOfWands from './images/KnightOfWands.png'
-// import QueenOfWands from './images/QueenOfWands.png'
-// import KingOfWands from './images/KingOfWands.png'
+import SevenOfWands from './images/SevenOfWands.png'
+import EightOfWands from './images/EightOfWands.png'
+import NineOfWands from './images/NineOfWands.png'
+import TenOfWands from './images/TenOfWands.png'
+import PageOfWands from './images/PageOfWands.png'
+import KnightOfWands from './images/KnightOfWands.png'
+import QueenOfWands from './images/QueenOfWands.png'
+import KingOfWands from './images/KingOfWands.png'
 
 
 const tarotCards = [
@@ -205,13 +205,55 @@ const tarotCards = [
         keywords: 'Victory, Recognition, Celebration',
         image: SixOfWands
     },
-/*     {
+    {
         name: 'Seven of Wands',
         description: 'Seven of Wands represents courageously defending one\'s position against challenges and opposition.',
         keywords: 'Courage, Defiance, Opposition',
         image: SevenOfWands
     },
- */
+    {
+        name: 'Eight of Wands',
+        description: 'Eight of Wands represents rapid action, quick developments, and the swift arrival of change or communication in various aspects of life.',
+        keywords: 'Swift, Progress, Communication',
+        image: EightOfWands
+    },
+    {
+        name: 'Nine of Wands',
+        description: ' Nine of Wands represents resilience, endurance, and the strength to persist in the face of challenges and obstacles.',
+        keywords: 'Resilience, Perseverance, Endurance',
+        image: NineOfWands
+    },
+    {
+        name: 'Ten of Wands',
+        description: 'Ten of Wands represents the burden of responsibilities, the feeling of being overwhelmed, and the need to find balance and release from the weight of one\'s obligations.',
+        keywords: 'Burden, Overwhelm, Release',
+        image: TenOfWands
+    },
+    {
+        name: 'Page of Wands',
+        description: 'Page of Wands represents the spark of inspiration, the emergence of creative potential, and the enthusiastic pursuit of new ventures and opportunities.',
+        keywords: 'Inspiration, Potential, Exploration',
+        image: PageOfWands
+    },
+    {
+        name: 'Knight of Wands',
+        description: 'Knight of Wands represents passion, action, and a bold and adventurous spirit, as one fearlessly charges forward towards their goals and desires.',
+        keywords: 'Passion, Action, Adventure',
+        image: KnightOfWands
+    },
+    {
+        name: 'Queen of Wands',
+        description: 'Queen of Wands represents a charismatic, confident, and passionate woman who is a natural leader and radiates creativity and enthusiasm in all aspects of her life.',
+        keywords: 'Charismatic, Passionate, Confident',
+        image: QueenOfWands
+    },
+    {
+        name: 'King of Wands',
+        description: 'King of Wands represents a visionary and dynamic leader who exudes confidence, takes decisive action, and inspires others through his strong will and creative pursuits.',
+        keywords: 'Visionary, Assertiveness, Ambition',
+        image: KingOfWands
+    },
+
 ];
 
 export default tarotCards;
