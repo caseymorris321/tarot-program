@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import tarotCards from './TarotCards';
+import tarotDeckCover from './images/TarotDeckCover.png';
 import './TarotCardGenerator.css';
 
 function TarotCardGenerator() {
   const [selectedCards, setSelectedCards] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [randomCard, setRandomCard] = useState(null);
+  const [firstCardGenerated, setFirstCardGenerated] = useState(false);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -35,6 +37,9 @@ function TarotCardGenerator() {
       setRandomCard(null);
       setInputValue("");
       document.documentElement.style.setProperty('--num-cards', numCards);
+      if (!firstCardGenerated) {
+        setFirstCardGenerated(true);
+      }
     }
   };
 
@@ -49,51 +54,65 @@ function TarotCardGenerator() {
     const newRandomCard = tarotCards[newIndex];
     setRandomCard(newRandomCard);
     setSelectedCards([]);
+    if (!firstCardGenerated) {
+      setFirstCardGenerated(true);
+    }
   };
 
   return (
     <div className="container">
-      <h1>Tarot Card Generator</h1>
-      <div className="content">
-        <button className="button" onClick={handleGenerateRandomCard}>Select Random Card</button>
-        <div>or<br /></div>
-        <div className="input-container">
-          <label>
-            Enter number of cards:{" "}
-            <input
-              type="text"
-              value={inputValue}
-              onChange={handleInputChange}
-              onKeyDown={(event) => {
-                if (event.key === "Enter") {
-                  handleSelectCards();
-                }
-              }}
-            />
-          </label>
-          <button className="button" onClick={handleSelectCards}>Select Cards</button>
-        </div>
-        {selectedCards.length > 0 && (
-          <div className="card-container">
-            {selectedCards.map((card) => (
-              <div className="card" key={card.name}>
-                <h2>{card.name}</h2>
-                <img src={card.image} alt={card.name} />
-                <p>{card.description}</p>
-                <p>Keywords: {card.keywords}</p>
-              </div>
-            ))}
-          </div>
-        )}
-        {randomCard && (
-          <div className="card">
-            <h2>{randomCard.name}</h2>
-            <img src={randomCard.image} alt={randomCard.name} />
-            <p>{randomCard.description}</p>
-            <p>Keywords: {randomCard.keywords}</p>
-          </div>
-        )}
+      <div className="h1-container">
+        <h1>Tarot Card Generator</h1>
       </div>
+      {!firstCardGenerated ? (
+        <div className="cover-image-container">
+          <button className="button start-button" onClick={() => setFirstCardGenerated(true)}>Start Reading</button>
+          <img src={tarotDeckCover} alt="Tarot Deck Cover" className="cover-image" />
+          <h2 className="cover-text">AI Generated Tarot</h2>
+        </div>
+      ) : (
+        <div className="content">
+          <button className="button random-button" onClick={handleGenerateRandomCard}>Draw Random Card</button>
+          <span className="or-divider">or</span>
+          <div className="input-container">
+            <label className="input-label">
+              Enter number of cards:&nbsp;
+              <input
+                className="input-field"
+                type="text"
+                value={inputValue}
+                onChange={handleInputChange}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") {
+                    handleSelectCards();
+                  }
+                }}
+              />
+            </label>
+            <button className="button select-button" onClick={handleSelectCards}>Draw Random Cards</button>
+          </div>
+          {selectedCards.length > 0 && (
+            <div className="card-container">
+              {selectedCards.map((card) => (
+                <div className="card" key={card.name}>
+                  <h2>{card.name}</h2>
+                  <img src={card.image} alt={card.name} className="card-image" />
+                  <p className="card-description">{card.description}</p>
+                  <p className="card-keywords"><strong>Keywords:</strong> {card.keywords}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          {randomCard && (
+            <div className="card random-card">
+              <h2>{randomCard.name}</h2>
+              <img src={randomCard.image} alt={randomCard.name} className="card-image" />
+              <p className="card-description">{randomCard.description}</p>
+              <p className="card-keywords"><strong>Keywords:</strong> {randomCard.keywords}</p>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

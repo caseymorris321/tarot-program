@@ -34,6 +34,21 @@ import PageOfWands from './images/PageOfWands.png'
 import KnightOfWands from './images/KnightOfWands.png'
 import QueenOfWands from './images/QueenOfWands.png'
 import KingOfWands from './images/KingOfWands.png'
+import AceOfCups from './images/AceOfCups.png'
+import TwoOfCups from './images/TwoOfCups.png'
+import ThreeOfCups from './images/ThreeOfCups.png'
+import FourOfCups from './images/FourOfCups.png'
+import FiveOfCups from './images/FiveOfCups.png'
+import SixOfCups from './images/SixOfCups.png'
+import SevenOfCups from './images/SevenOfCups.png'
+import EightOfCups from './images/EightOfCups.png'
+import NineOfCups from './images/NineOfCups.png'
+import TenOfCups from './images/TenOfCups.png'
+import PageOfCups from './images/PageOfCups.png'
+// import KnightOfCups from './images/KnightOfCups.png'
+// import QueenOfCups from './images/QueenOfCups.png'
+// import KingOfCups from './images/KingOfCups.png'
+
 
 
 const tarotCards = [
@@ -253,6 +268,92 @@ const tarotCards = [
         keywords: 'Visionary, Assertiveness, Ambition',
         image: KingOfWands
     },
+    {
+        name: 'Ace of Cups',
+        description: 'Ace of Cups symbolizes new beginnings, emotional fulfillment, and the potential for love and deep connections in one\'s life',
+        keywords: 'Love, Emotions, New Beginnings',
+        image: AceOfCups
+    },
+    {
+        name: 'Two of Cups',
+        description: 'Two of Cups represents harmony, balance, and deep emotional connections between two individuals',
+        keywords: 'Love, Partnership, Unity',
+        image: TwoOfCups
+    },
+    {
+        name: 'Three of Cups',
+        description: 'Three of Cups represents friendship, joyous gatherings, and harmonious relationships.',
+        keywords: 'Friendship, Celebration, Unity',
+        image: ThreeOfCups
+    },
+    {
+        name: 'Four of Cups',
+        description: 'Four of Cups represents introspection and contemplation, as the figure in the card appears detached and uninterested in the opportunities presented before them',
+        keywords: 'Introspection, Detachment, Contemplation',
+        image: FourOfCups
+    },
+    {
+        name: 'Five of Cups',
+        description: 'Five of Cups represents a person standing before three spilled cups with a sense of sorrow and missed opportunities, while two cups remain upright in the background, offering a glimmer of hope and potential for emotional healing.',
+        keywords: 'Loss, Disappointment, Renewal',
+        image: FiveOfCups
+    },
+    {
+        name: 'Six of Cups',
+        description: 'Six of Cups depicts a scene of nostalgic innocence and sweet memories as two individuals exchange cups, symbolizing a sense of joy, reunion, and a fond remembrance of the past.',
+        keywords: 'Nostalgia, Innocence, Reunion',
+        image: SixOfCups
+    },
+    {
+        name: 'Seven of Cups',
+        description: 'Seven of Cups portrays a figure surrounded by seven floating cups, each containing a different illusion or fantasy, symbolizing choices, dreams, and the need for discernment amidst various tempting possibilities.',
+        keywords: 'Choices, Illusions, Discernment',
+        image: SevenOfCups
+    },
+    {
+        name: 'Eight of Cups',
+        description: ' Eight of Cups portrays a figure walking away from a stack of cups, signifying a journey of emotional detachment, soul-searching, and the pursuit of a higher purpose or spiritual fulfillment.',
+        keywords: 'Detachment, Introspection, Quest',
+        image: EightOfCups
+    },
+    {
+        name: 'Nine of Cups',
+        description: 'Nine of Cups represents a person sitting contentedly with nine cups arranged behind them, symbolizing fulfillment, emotional satisfaction, and a sense of accomplishment or wish fulfillment in various areas of life.',
+        keywords: 'Fulfillment, Satisfaction, Abundance',
+        image: NineOfCups
+    },
+    {
+        name: 'Ten of Cups',
+        description: 'Ten of Cups portrays a harmonious family scene with a rainbow overhead, symbolizing domestic bliss, emotional fulfillment, and the attainment of lasting happiness and harmonious relationships.',
+        keywords: 'Fulfillment, Harmony, Joy',
+        image: TenOfCups
+    },
+    {
+        name: 'Page of Cups',
+        description: 'Page of Cups depicts a young person holding a cup with a fish emerging from it, symbolizing emotional openness, intuition, and the emergence of creative and imaginative endeavors.',
+        keywords: 'Emotional openness, Intuition, Creativity',
+        image: PageOfCups
+    },
+    {
+        name: 'Knight of Cups',
+        description: 'King of Wands represents a visionary and dynamic leader who exudes confidence, takes decisive action, and inspires others through his strong will and creative pursuits.',
+        keywords: 'Visionary, Assertiveness, Ambition',
+        image: KingOfWands
+    },
+    {
+        name: 'Queen of Cups',
+        description: 'King of Wands represents a visionary and dynamic leader who exudes confidence, takes decisive action, and inspires others through his strong will and creative pursuits.',
+        keywords: 'Visionary, Assertiveness, Ambition',
+        image: KingOfWands
+    },
+    {
+        name: 'King of Cups',
+        description: 'King of Wands represents a visionary and dynamic leader who exudes confidence, takes decisive action, and inspires others through his strong will and creative pursuits.',
+        keywords: 'Visionary, Assertiveness, Ambition',
+        image: KingOfWands
+    },
+    
+
 
 ];
 
