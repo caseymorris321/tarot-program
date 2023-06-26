@@ -45,11 +45,37 @@ import EightOfCups from './images/EightOfCups.png'
 import NineOfCups from './images/NineOfCups.png'
 import TenOfCups from './images/TenOfCups.png'
 import PageOfCups from './images/PageOfCups.png'
-// import KnightOfCups from './images/KnightOfCups.png'
-// import QueenOfCups from './images/QueenOfCups.png'
-// import KingOfCups from './images/KingOfCups.png'
-
-
+import KnightOfCups from './images/KnightOfCups.png'
+import QueenOfCups from './images/QueenOfCups.png'
+import KingOfCups from './images/KingOfCups.png'
+// import AceOfSwords from './images/AceOfSwords.png'
+// import TwoOfSwords from './images/TwoOfSwords.png'
+// import ThreeOfSwords from './images/ThreeOfSwords.png'
+// import FourOfSwords from './images/FourOfSwords.png'
+// import FiveOfSwords from './images/FiveOfSwords.png'
+// import SixOfSwords from './images/SixOfSwords.png'
+// import SevenOfSwords from './images/SevenOfSwords.png'
+// import EightOfSwords from './images/EightOfSwords.png'
+// import NineOfSwords from './images/NineOfSwords.png'
+// import TenOfSwords from './images/TenOfSwords.png'
+// import PageOfSwords from './images/PageOfSwords.png'
+// import KnightOfSwords from './images/KnightOfSwords.png'
+// import QueenOfSwords from './images/QueenOfSwords.png'
+// import KingOfSwords from './images/KingOfSwords.png'
+// import AceOfPentacles from './images/AceOfPentalces.png'
+// import TwoOfPentacles from './images/TwoOfPentalces.png'
+// import ThreeOfPentacles from './images/ThreeOfPentalces.png'
+// import FourOfPentacles from './images/FourOfPentalces.png'
+// import FiveOfPentacles from './images/FiveOfPentalces.png'
+// import SixOfPentacles from './images/SixOfPentalces.png'
+// import SevenOfPentacles from './images/SevenOfPentalces.png'
+// import EightOfPentacles from './images/EightOfPentalces.png'
+// import NineOfPentacles from './images/NineOfPentalces.png'
+// import TenOfPentacles from './images/TenOfPentalces.png'
+// import PageOfPentacles from './images/PageOfPentalces.png'
+// import KnightOfPentacles from './images/KnightOfPentalces.png'
+// import QueenOfPentacles from './images/QueenOfPentalces.png'
+// import KingOfPentacles from './images/KingOfPentalces.png'
 
 const tarotCards = [
     {
@@ -276,7 +302,7 @@ const tarotCards = [
     },
     {
         name: 'Two of Cups',
-        description: 'Two of Cups represents harmony, balance, and deep emotional connections between two individuals',
+        description: 'Two of Cups represents harmony, balance, and deep emotional connections between two individuals.',
         keywords: 'Love, Partnership, Unity',
         image: TwoOfCups
     },
@@ -336,25 +362,190 @@ const tarotCards = [
     },
     {
         name: 'Knight of Cups',
-        description: 'King of Wands represents a visionary and dynamic leader who exudes confidence, takes decisive action, and inspires others through his strong will and creative pursuits.',
-        keywords: 'Visionary, Assertiveness, Ambition',
-        image: KingOfWands
+        description: 'Knight of Cups symbolizes romantic pursuits, emotional sensitivity, intuition, and the quest for creative inspiration and meaningful connections.',
+        keywords: 'Romance, Chivalry, Emotional depth',
+        image: KnightOfCups
     },
     {
         name: 'Queen of Cups',
-        description: 'King of Wands represents a visionary and dynamic leader who exudes confidence, takes decisive action, and inspires others through his strong will and creative pursuits.',
-        keywords: 'Visionary, Assertiveness, Ambition',
-        image: KingOfWands
+        description: 'Queen of Cups represents emotional intelligence, empathy, intuition, and the embodiment of feminine nurturing energy.',
+        keywords: 'Empathy, Intuition, Nurturing',
+        image: QueenOfCups
     },
     {
         name: 'King of Cups',
-        description: 'King of Wands represents a visionary and dynamic leader who exudes confidence, takes decisive action, and inspires others through his strong will and creative pursuits.',
-        keywords: 'Visionary, Assertiveness, Ambition',
-        image: KingOfWands
+        description: 'King of Cups symbolizes emotional intelligence, compassion, mastery of emotions, wisdom, and the ability to balance logic with sensitivity.',
+        keywords: 'Compassion, Wisdom, Emotional mastery',
+        image: KingOfCups
     },
-    
-
+    {
+        name: 'Ace of Swords',
+        description: 'Ace of Swords represents the emergence of clarity and decisive action in one\'s life.',
+        keywords: 'Clarity, Emergence, Decisive action',
+        image: ''
+    },
+    {
+        name: 'Two of Swords',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Three of Swords',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Four of Swords',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Five of Swords',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Six of Swords',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Seven of Swords',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Eight of Swords',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Nine of Swords',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Ten of Swords',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Page of Swords',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Knight of Swords',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Queen of Swords',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'King of Swords',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Ace of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Two of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Three of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Four of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Five of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Six of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Seven of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Eight of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Nine of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Ten of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Page of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Knight of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'Queen of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
+    {
+        name: 'King of Pentacles',
+        description: '',
+        keywords: '',
+        image: ''
+    },
 
 ];
-
 export default tarotCards;

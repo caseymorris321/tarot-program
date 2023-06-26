@@ -3,16 +3,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 98vh;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
-  margin-top: 1vh;
   background-color: #f2f2f2;
 }
 
-.h1-container {
-  margin-top: 25px; /* Adjust the margin as desired */
+.h1-container h1 {
+  margin-top: 10px;
 }
-
 
 h1 {
   color: #6a4ba1;
@@ -22,7 +20,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
   padding-bottom: 20px;
   background-color: #fff;
   padding: 20px;
@@ -30,7 +28,7 @@ h1 {
 }
 
 .or-divider {
-  margin: 20px 0;
+  margin: 8px 0;
   font-size: 16px;
   color: #888;
 }
@@ -61,7 +59,7 @@ h1 {
 }
 
 .button {
-  background-color: #6a4ba1;
+  background-color: #4caf50;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -77,14 +75,6 @@ h1 {
 
 .button:hover {
   background-color: #4e388c;
-}
-
-.random-button {
-  background-color: #4caf50;
-}
-
-.select-button {
-  background-color: #4caf50;
 }
 
 .start-button {
@@ -138,7 +128,7 @@ h1 {
 }
 
 .card-description {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
   margin: 10px 0;
   line-height: 1.4;
@@ -152,6 +142,7 @@ h1 {
   color: #888;
 }
 
+
 .cover-image-container {
   display: flex;
   flex-direction: column;
@@ -163,16 +154,6 @@ h1 {
 .cover-image {
   max-width: 100%;
   max-height: 100%;
-}
-
-.cover-text {
-  position: absolute;
-  top: 72%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
 }
 
 @media (max-width: 575.98px) {

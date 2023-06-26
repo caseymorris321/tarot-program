@@ -8,6 +8,7 @@ function TarotCardGenerator() {
   const [inputValue, setInputValue] = useState("");
   const [randomCard, setRandomCard] = useState(null);
   const [firstCardGenerated, setFirstCardGenerated] = useState(false);
+  const [showNewReadingButton, setShowNewReadingButton] = useState(false);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -37,9 +38,8 @@ function TarotCardGenerator() {
       setRandomCard(null);
       setInputValue("");
       document.documentElement.style.setProperty('--num-cards', numCards);
-      if (!firstCardGenerated) {
-        setFirstCardGenerated(true);
-      }
+      setFirstCardGenerated(true);
+      setShowNewReadingButton(true);
     }
   };
 
@@ -54,21 +54,26 @@ function TarotCardGenerator() {
     const newRandomCard = tarotCards[newIndex];
     setRandomCard(newRandomCard);
     setSelectedCards([]);
-    if (!firstCardGenerated) {
-      setFirstCardGenerated(true);
-    }
+    setFirstCardGenerated(true);
+    setShowNewReadingButton(true);
+  };
+
+  const handleNewReading = () => {
+    setSelectedCards([]);
+    setRandomCard(null);
+    setFirstCardGenerated(false);
+    setShowNewReadingButton(false);
   };
 
   return (
     <div className="container">
       <div className="h1-container">
-        <h1>Tarot Card Generator</h1>
+        <h1 className="h1">Tarot Card Generator</h1>
       </div>
       {!firstCardGenerated ? (
         <div className="cover-image-container">
           <button className="button start-button" onClick={() => setFirstCardGenerated(true)}>Start Reading</button>
           <img src={tarotDeckCover} alt="Tarot Deck Cover" className="cover-image" />
-          <h2 className="cover-text">AI Generated Tarot</h2>
         </div>
       ) : (
         <div className="content">
@@ -110,6 +115,9 @@ function TarotCardGenerator() {
               <p className="card-description">{randomCard.description}</p>
               <p className="card-keywords"><strong>Keywords:</strong> {randomCard.keywords}</p>
             </div>
+          )}
+          {showNewReadingButton && (
+            <button className="button new-reading-button" onClick={handleNewReading}>New Reading</button>
           )}
         </div>
       )}
