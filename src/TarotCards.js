@@ -48,10 +48,10 @@ import PageOfCups from './images/PageOfCups.png'
 import KnightOfCups from './images/KnightOfCups.png'
 import QueenOfCups from './images/QueenOfCups.png'
 import KingOfCups from './images/KingOfCups.png'
-// import AceOfSwords from './images/AceOfSwords.png'
-// import TwoOfSwords from './images/TwoOfSwords.png'
-// import ThreeOfSwords from './images/ThreeOfSwords.png'
-// import FourOfSwords from './images/FourOfSwords.png'
+import AceOfSwords from './images/AceOfSwords.png'
+import TwoOfSwords from './images/TwoOfSwords.png'
+import ThreeOfSwords from './images/ThreeOfSwords.png'
+import FourOfSwords from './images/FourOfSwords.png'
 // import FiveOfSwords from './images/FiveOfSwords.png'
 // import SixOfSwords from './images/SixOfSwords.png'
 // import SevenOfSwords from './images/SevenOfSwords.png'
@@ -382,25 +382,25 @@ const tarotCards = [
         name: 'Ace of Swords',
         description: 'Ace of Swords represents the emergence of clarity and decisive action in one\'s life.',
         keywords: 'Clarity, Emergence, Decisive action',
-        image: ''
+        image: AceOfSwords
     },
     {
         name: 'Two of Swords',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Two of Swords represents a state of indecision, often depicting the need to weigh options, find inner harmony, and seek clarity before making a significant choice.',
+        keywords: 'Indecision, Balance, Contemplation',
+        image: TwoOfSwords
     },
     {
         name: 'Three of Swords',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Three of Swords symbolizes emotional pain, heartache, and sorrow, representing a period of grief and healing.',
+        keywords: 'Heartbreak, Suffering, Healing',
+        image: ThreeOfSwords
     },
     {
         name: 'Four of Swords',
-        description: '',
-        keywords: '',
-        image: ''
+        description: ' Four of Swords represents a period of rest, solitude, and recuperation, suggesting the need for inner reflection and self-care.',
+        keywords: 'Rest, Reflection, Rejuvenation',
+        image: FourOfSwords
     },
     {
         name: 'Five of Swords',

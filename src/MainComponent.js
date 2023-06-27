@@ -37,7 +37,6 @@ function TarotCardGenerator() {
       setSelectedCards(cards);
       setRandomCard(null);
       setInputValue("");
-      document.documentElement.style.setProperty('--num-cards', numCards);
       setFirstCardGenerated(true);
       setShowNewReadingButton(true);
     }
