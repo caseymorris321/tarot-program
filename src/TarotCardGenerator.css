@@ -13,7 +13,7 @@
 .h1-container h1 {
   margin-top: 1px;
   font-size: 24px;
-  color: #6a4ba1;
+  color: #6a4ba1
 }
 
 h1 {
@@ -82,7 +82,7 @@ h1 {
   transition: background-color 0.3s ease;
 }
 
-.random-button {
+.random-button{
   background-color: #4e388c
 }
 
@@ -138,6 +138,7 @@ h1 {
 
 .new-reading-button:hover {
   background-color: #810606;
+
 }
 
 .donate-button {
@@ -249,52 +250,31 @@ h1 {
   0% {
     opacity: 0;
   }
-
   50% {
     opacity: 1;
   }
-
   100% {
     opacity: 0;
   }
 }
 
 
-@media screen and (max-width: 480px) {
+@media (min-width: 576px) {
   .h1-container h1 {
-    font-size: 16px;
+    font-size: 28px;
   }
 
-  .input-field {
-    width: 40px;
-    padding: 6px;
-    font-size: 12px;
-  }
-
-  .button {
-    padding: 8px 16px;
-    font-size: 14px;
+  h1 {
+    font-size: 24px;
   }
 
   .start-button {
-    font-size: 30px;
+    font-size: 40px;
+    width: 90%;
+    max-width: 300px;
   }
 
-  .card {
-    flex-basis: 120px;
-    margin: 5px;
-    padding: 5px;
-  }
-
-  .card h2 {
-    font-size: 14px;
-  }
-
-  .card p {
-    font-size: 12px;
-  }
-
-  .keywords {
-    font-size: 10px;
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
