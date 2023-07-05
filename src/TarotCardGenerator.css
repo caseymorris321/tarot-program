@@ -7,6 +7,8 @@
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
   padding: 7px;
+  position: relative;
+  /* Add position relative */
 }
 
 .h1-container h1 {
@@ -92,6 +94,10 @@ h1 {
   font-size: 50px;
 }
 
+.start-button:hover {
+  background-color: #4e388c
+}
+
 .select-button {
   background-color: #4caf50;
   color: #fff;
@@ -125,8 +131,29 @@ h1 {
 }
 
 .new-reading-button:hover {
-  background-color: #2196f3;
-  /* Change the hover background color */
+  background-color: #701212;
+}
+
+.donate-button {
+  position: absolute;
+  /* Position the button absolutely */
+  bottom: 10px;
+  /* Adjust the bottom value as needed */
+  background-color: #a72e2e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.donate-button:hover {
+  background-color: #701212;
 }
 
 .card-container {
@@ -221,9 +248,11 @@ h1 {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
