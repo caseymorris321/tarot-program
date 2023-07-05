@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect  } from 'react';
 import tarotCards from './TarotCards';
 import tarotDeckCover from './images/TarotDeckCover.png';
 import loadingImage from './images/loading.gif';
