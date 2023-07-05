@@ -52,30 +52,30 @@ import AceOfSwords from './images/AceOfSwords.png'
 import TwoOfSwords from './images/TwoOfSwords.png'
 import ThreeOfSwords from './images/ThreeOfSwords.png'
 import FourOfSwords from './images/FourOfSwords.png'
-// import FiveOfSwords from './images/FiveOfSwords.png'
-// import SixOfSwords from './images/SixOfSwords.png'
-// import SevenOfSwords from './images/SevenOfSwords.png'
-// import EightOfSwords from './images/EightOfSwords.png'
-// import NineOfSwords from './images/NineOfSwords.png'
-// import TenOfSwords from './images/TenOfSwords.png'
-// import PageOfSwords from './images/PageOfSwords.png'
-// import KnightOfSwords from './images/KnightOfSwords.png'
-// import QueenOfSwords from './images/QueenOfSwords.png'
-// import KingOfSwords from './images/KingOfSwords.png'
-// import AceOfPentacles from './images/AceOfPentalces.png'
-// import TwoOfPentacles from './images/TwoOfPentalces.png'
-// import ThreeOfPentacles from './images/ThreeOfPentalces.png'
-// import FourOfPentacles from './images/FourOfPentalces.png'
-// import FiveOfPentacles from './images/FiveOfPentalces.png'
-// import SixOfPentacles from './images/SixOfPentalces.png'
-// import SevenOfPentacles from './images/SevenOfPentalces.png'
-// import EightOfPentacles from './images/EightOfPentalces.png'
-// import NineOfPentacles from './images/NineOfPentalces.png'
-// import TenOfPentacles from './images/TenOfPentalces.png'
-// import PageOfPentacles from './images/PageOfPentalces.png'
-// import KnightOfPentacles from './images/KnightOfPentalces.png'
-// import QueenOfPentacles from './images/QueenOfPentalces.png'
-// import KingOfPentacles from './images/KingOfPentalces.png'
+import FiveOfSwords from './images/FiveOfSwords.png'
+import SixOfSwords from './images/SixOfSwords.png'
+import SevenOfSwords from './images/SevenOfSwords.png'
+import EightOfSwords from './images/EightOfSwords.png'
+import NineOfSwords from './images/NineOfSwords.png'
+import TenOfSwords from './images/TenOfSwords.png'
+import PageOfSwords from './images/PageOfSwords.png'
+import KnightOfSwords from './images/KnightOfSwords.png'
+import QueenOfSwords from './images/QueenOfSwords.png'
+import KingOfSwords from './images/KingOfSwords.png'
+import AceOfPentacles from './images/AceOfPentacles.png'
+import TwoOfPentacles from './images/TwoOfPentacles.png'
+import ThreeOfPentacles from './images/ThreeOfPentacles.png'
+import FourOfPentacles from './images/FourOfPentacles.png'
+import FiveOfPentacles from './images/FiveOfPentacles.png'
+import SixOfPentacles from './images/SixOfPentacles.png'
+import SevenOfPentacles from './images/SevenOfPentacles.png'
+import EightOfPentacles from './images/EightOfPentacles.png'
+import NineOfPentacles from './images/NineOfPentacles.png'
+import TenOfPentacles from './images/TenOfPentacles.png'
+import PageOfPentacles from './images/PageOfPentacles.png'
+import KnightOfPentacles from './images/KnightOfPentacles.png'
+import QueenOfPentacles from './images/QueenOfPentacles.png'
+import KingOfPentacles from './images/KingOfPentacles.png'
 
 const tarotCards = [
     {
@@ -320,7 +320,7 @@ const tarotCards = [
     },
     {
         name: 'Five of Cups',
-        description: 'Five of Cups represents a person standing before three spilled cups with a sense of sorrow and missed opportunities, while two cups remain upright in the background, offering a glimmer of hope and potential for emotional healing.',
+        description: 'Five of Cups represents loss, grief, and the need to confront and process negative emotions in order to move forward and find healing.',
         keywords: 'Loss, Disappointment, Renewal',
         image: FiveOfCups
     },
@@ -404,147 +404,147 @@ const tarotCards = [
     },
     {
         name: 'Five of Swords',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Five of Swords card symbolizes conflict, discord, and the aftermath of a difficult battle where one party emerges as the victor, leaving the defeated feeling defeated and resentful.',
+        keywords: 'Conflict, Victory, Resentment',
+        image: FiveOfSwords
     },
     {
         name: 'Six of Swords',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Six of Swords card represents a journey of transition and moving forward, leaving behind a troubled past and seeking solace in calmer waters, symbolizing the hope for a brighter future.',
+        keywords: 'Transition, Journey, Hope',
+        image: SixOfSwords
     },
     {
         name: 'Seven of Swords',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Seven of Swords card represents cunning, deception, and a clever strategy employed to outwit others and achieve personal gain, reminding us to be wary of hidden motives and to maintain integrity in our actions.',
+        keywords: 'Cunning, Deception, Strategy',
+        image: SevenOfSwords
     },
     {
         name: 'Eight of Swords',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Eight of Swords card represents feelings of restriction, entrapment, and self-imposed limitations, reminding us to seek clarity, challenge our perceived boundaries, and find the inner strength to break free from the constraints that hold us back.',
+        keywords: 'Restriction, Entrapment, Liberation.',
+        image: EightOfSwords
     },
     {
         name: 'Nine of Swords',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Nine of Swords card represents worry, anxiety, and inner turmoil, depicting a person haunted by their own fears and racing thoughts, urging us to confront our anxieties and seek solace through self-reflection and reaching out for support.',
+        keywords: 'Worry, Anxiety, Introspection',
+        image: NineOfSwords
     },
     {
         name: 'Ten of Swords',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Ten of Swords card represents a dramatic end or culmination of a difficult situation, signifying the completion of a cycle, the need for acceptance, and the potential for transformation and new beginnings.',
+        keywords: 'Completion, Adversity, Transformation',
+        image: TenOfSwords
     },
     {
         name: 'Page of Swords',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Page of Swords represents a youthful and curious energy, signaling the emergence of new ideas, intellectual pursuits, and the need for mental agility in the face of challenges.',
+        keywords: 'Youthfulness, Curiosity, Mental agility',
+        image: PageOfSwords
     },
     {
         name: 'Knight of Swords',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Knight of Swords charges forth with swift and decisive action, seeking truth, justice, and clarity in all endeavors.',
+        keywords: 'Action, Determination, Clarity',
+        image: KnightOfSwords
     },
     {
         name: 'Queen of Swords',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Queen of Swords embodies sharp intellect, astute observation, and unwavering independence, wielding her sword of truth with grace and precision.',
+        keywords: 'Intellect, Independence, Truth',
+        image: QueenOfSwords
     },
     {
         name: 'King of Swords',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'King of Swords exudes authority, logic, and sharp discernment, ruling with a calm and commanding presence while upholding the principles of justice and truth.',
+        keywords: 'Authority, Logic, Justice',
+        image: KingOfSwords
     },
     {
         name: 'Ace of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Ace of Pentacles signifies new beginnings and material abundance, representing the fertile ground for prosperous opportunities and the potential for long-term stability and growth',
+        keywords: 'Opportunity, Abundance, Stability',
+        image: AceOfPentacles
     },
     {
         name: 'Two of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Two of Pentacles represents the delicate balance of juggling multiple responsibilities and priorities, navigating life\'s ups and downs with adaptability and flexibility while seeking harmony amidst the constant motion.',
+        keywords: 'Balance, Adaptability, Priorities',
+        image: TwoOfPentacles
     },
     {
         name: 'Three of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Three of Pentacles represents collaboration, teamwork, and skilled craftsmanship, emphasizing the importance of working together towards a common goal to achieve success.',
+        keywords: 'Collaboration, Teamwork, Skilled Craftsmanship',
+        image: ThreeOfPentacles
     },
     {
         name: 'Four of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Four of Pentacles signifies possessiveness, a fear of loss, and a tendency to hold tightly to material possessions or control, often at the expense of personal relationships or experiencing true abundance.',
+        keywords: 'Possessiveness, Fear, Material Possessions',
+        image: FourOfPentacles
     },
     {
         name: 'Five of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Five of Pentacles represents adversity, financial struggle, and a sense of isolation, highlighting the importance of seeking support and finding inner resilience during challenging times.',
+        keywords: 'Adversity, Financial Struggle, Isolation',
+        image: FiveOfPentacles
     },
     {
         name: 'Six of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Six of Pentacles embodies generosity, charity, and the act of giving, emphasizing the balance between sharing one\'s resources with others and receiving support when needed.',
+        keywords: 'Generosity, Charity, Balance',
+        image: SixOfPentacles
     },
     {
         name: 'Seven of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Seven of Pentacles symbolizes patience, perseverance, and a time of evaluation, highlighting the need to assess one\'s progress, make adjustments, and trust in the process of growth and fruition.',
+        keywords: 'Patience, Perseverance, Evaluation',
+        image: SevenOfPentacles
     },
     {
         name: 'Eight of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Eight of Pentacles represents diligence, skill development, and a focus on honing one\'s craft, emphasizing the importance of dedicated effort and continuous improvement in order to achieve mastery.',
+        keywords: 'Diligence, Skill Development, Mastery',
+        image: EightOfPentacles
     },
     {
         name: 'Nine of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Nine of Pentacles represents self-sufficiency, abundance, and enjoying the rewards of one\'s hard work, highlighting a sense of independence and luxury that comes from cultivating personal success and financial stability.',
+        keywords: 'Self-sufficiency, Abundance, Luxury',
+        image: NineOfPentacles
     },
     {
         name: 'Ten of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Ten of Pentacles signifies wealth, legacy, and the fulfillment of long-term goals, illustrating a state of prosperity and stability within a family or community that has been built through generations of hard work and wise financial decisions.',
+        keywords: 'Wealth, Legacy, Prosperity',
+        image: TenOfPentacles
     },
     {
         name: 'Page of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Page of Pentacles represents a youthful and curious individual who is eager to learn, explore, and embark on new ventures, symbolizing the potential for practicality, groundedness, and the initial stages of manifesting goals in the realm of finances and material possessions.',
+        keywords: 'Youthful, Curiosity, Practicality',
+        image: PageOfPentacles
     },
     {
         name: 'Knight of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Knight of Pentacles embodies a diligent, methodical, and dependable energy, symbolizing the traits of responsibility, hard work, and a strong focus on practical matters and long-term stability.',
+        keywords: 'Diligence, Responsibility, Stability',
+        image: KnightOfPentacles
     },
     {
         name: 'Queen of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'Queen of Pentacles represents a nurturing and abundant energy, embodying qualities of practicality, financial security, and a deep connection to nature, emphasizing the importance of nurturing oneself and others while finding joy in the material comforts of life.',
+        keywords: 'Nurturing, Abundance, Practicality',
+        image: QueenOfPentacles
     },
     {
         name: 'King of Pentacles',
-        description: '',
-        keywords: '',
-        image: ''
+        description: 'King of Pentacles represents a grounded and prosperous energy, embodying qualities of financial mastery, practicality, and a strong sense of responsibility, highlighting the ability to achieve and maintain wealth through wise decision-making and diligent management of resources.',
+        keywords: 'Grounded, Prosperity, Responsibility',
+        image: KingOfPentacles
     },
 
 ];

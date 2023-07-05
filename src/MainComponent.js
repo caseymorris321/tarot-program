@@ -64,6 +64,53 @@ function TarotCardGenerator() {
     setShowNewReadingButton(false);
   };
 
+  const openCardInNewTab = (card) => {
+    const newTab = window.open('', '_blank');
+    newTab.document.open();
+    newTab.document.write(`
+      <html>
+      <head>
+        <title>${card.name}</title>
+        <style>
+          body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+          }
+          .card {
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+          }
+          .card h2 {
+            margin-top: 0;
+          }
+          .card img {
+            max-width: 100%;
+            height: auto;
+          }
+          .card p {
+            margin: 10px 0;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="card">
+          <h2>${card.name}</h2>
+          <img src="${card.image}" alt="${card.name}">
+          <p>${card.description}</p>
+          <p><strong>Keywords:</strong> ${card.keywords}</p>
+        </div>
+      </body>
+      </html>
+    `);
+    newTab.document.close();
+  };
+  
+
   return (
     <div className="container">
       <div className="h1-container">
@@ -93,14 +140,16 @@ function TarotCardGenerator() {
                 }}
               />
             </label>
-            <button className="button select-button" onClick={handleSelectCards}>Draw Random Cards</button>
+            <button className="button select-button" onClick={handleSelectCards}>Select Cards</button>
           </div>
           {selectedCards.length > 0 && (
             <div className="card-container">
               {selectedCards.map((card) => (
-                <div className="card" key={card.name}>
+                <div className="card" key={card.name} onClick={() => openCardInNewTab(card)}>
                   <h2>{card.name}</h2>
-                  <img src={card.image} alt={card.name} className="card-image" />
+                  <div className="image-container">
+                    <img src={card.image} alt={card.name} className="card-image" />
+                  </div>
                   <p className="card-description">{card.description}</p>
                   <p className="card-keywords"><strong>Keywords:</strong> {card.keywords}</p>
                 </div>
@@ -108,9 +157,11 @@ function TarotCardGenerator() {
             </div>
           )}
           {randomCard && (
-            <div className="card random-card">
+            <div className="card random-card" onClick={() => openCardInNewTab(randomCard)}>
               <h2>{randomCard.name}</h2>
-              <img src={randomCard.image} alt={randomCard.name} className="card-image" />
+              <div className="image-container">
+                <img src={randomCard.image} alt={randomCard.name} className="card-image" />
+              </div>
               <p className="card-description">{randomCard.description}</p>
               <p className="card-keywords"><strong>Keywords:</strong> {randomCard.keywords}</p>
             </div>
