@@ -12,6 +12,12 @@ function TarotCardGenerator() {
   const [firstCardGenerated, setFirstCardGenerated] = useState(false);
   const [showNewReadingButton, setShowNewReadingButton] = useState(false);
 
+  useEffect(() => {
+    // Preload the tarotDeckCover image
+    const image = new Image();
+    image.src = tarotDeckCover;
+  }, []);
+
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
