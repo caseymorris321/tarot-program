@@ -6,7 +6,7 @@
   min-height: 100vh;
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
-  padding: 10px;
+  padding: 7px;
 }
 
 .h1-container h1 {
@@ -206,6 +206,29 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+.loading-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading-image {
+  animation: fadeInOut 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 
 @media (min-width: 576px) {
   .h1-container h1 {

@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import tarotCards from './TarotCards';
 import tarotDeckCover from './images/TarotDeckCover.png';
+import loadingImage from './images/loading.gif';
 import './TarotCardGenerator.css';
 
 function TarotCardGenerator() {
   const [selectedCards, setSelectedCards] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [randomCard, setRandomCard] = useState(null);
+  const [isGeneratingCard, setIsGeneratingCard] = useState(false);
   const [firstCardGenerated, setFirstCardGenerated] = useState(false);
   const [showNewReadingButton, setShowNewReadingButton] = useState(false);
 
@@ -23,38 +25,54 @@ function TarotCardGenerator() {
         return;
       }
 
-      const cards = [];
-      const indices = new Set();
+      // Set generating card state to true
+      setIsGeneratingCard(true);
 
-      while (cards.length < numCards) {
-        const index = Math.floor(Math.random() * tarotCards.length);
-        if (!indices.has(index)) {
-          cards.push(tarotCards[index]);
-          indices.add(index);
+      setTimeout(() => {
+        const cards = [];
+        const indices = new Set();
+
+        while (cards.length < numCards) {
+          const index = Math.floor(Math.random() * tarotCards.length);
+          if (!indices.has(index)) {
+            cards.push(tarotCards[index]);
+            indices.add(index);
+          }
         }
-      }
 
-      setSelectedCards(cards);
-      setRandomCard(null);
-      setInputValue("");
-      setFirstCardGenerated(true);
-      setShowNewReadingButton(true);
+        setSelectedCards(cards);
+        setRandomCard(null);
+        setInputValue("");
+        setFirstCardGenerated(true);
+        setShowNewReadingButton(true);
+
+        // Reset generating card state
+        setIsGeneratingCard(false);
+      }, 2000);
     }
   };
 
   const handleGenerateRandomCard = () => {
-    const currentCardIndex = randomCard ? tarotCards.findIndex((card) => card.name === randomCard.name) : -1;
+    // Set generating card state to true
+    setIsGeneratingCard(true);
 
-    let newIndex = Math.floor(Math.random() * tarotCards.length);
-    while (newIndex === currentCardIndex) {
-      newIndex = Math.floor(Math.random() * tarotCards.length);
-    }
+    setTimeout(() => {
+      const currentCardIndex = randomCard ? tarotCards.findIndex((card) => card.name === randomCard.name) : -1;
 
-    const newRandomCard = tarotCards[newIndex];
-    setRandomCard(newRandomCard);
-    setSelectedCards([]);
-    setFirstCardGenerated(true);
-    setShowNewReadingButton(true);
+      let newIndex = Math.floor(Math.random() * tarotCards.length);
+      while (newIndex === currentCardIndex) {
+        newIndex = Math.floor(Math.random() * tarotCards.length);
+      }
+
+      const newRandomCard = tarotCards[newIndex];
+      setRandomCard(newRandomCard);
+      setSelectedCards([]);
+      setFirstCardGenerated(true);
+      setShowNewReadingButton(true);
+
+      // Reset generating card state
+      setIsGeneratingCard(false);
+    }, 2000);
   };
 
   const handleNewReading = () => {
@@ -65,7 +83,7 @@ function TarotCardGenerator() {
   };
 
   const openCardInNewTab = (card) => {
-    const newTab = window.open('', '_blank');
+    const newTab = window.open("", "_blank");
     newTab.document.open();
     newTab.document.write(`
       <html>
@@ -92,7 +110,7 @@ function TarotCardGenerator() {
             max-width: 100%;
             height: auto;
           }
-          .card p {
+                   .card p {
             margin: 10px 0;
           }
         </style>
@@ -109,7 +127,6 @@ function TarotCardGenerator() {
     `);
     newTab.document.close();
   };
-  
 
   return (
     <div className="container">
@@ -133,41 +150,45 @@ function TarotCardGenerator() {
                 type="text"
                 value={inputValue}
                 onChange={handleInputChange}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") {
-                    handleSelectCards();
-                  }
-                }}
               />
             </label>
-            <button className="button select-button" onClick={handleSelectCards}>Select Cards</button>
+            <button className="button select-button" onClick={handleSelectCards}>Draw Random Cards</button>
           </div>
-          {selectedCards.length > 0 && (
-            <div className="card-container">
-              {selectedCards.map((card) => (
-                <div className="card" key={card.name} onClick={() => openCardInNewTab(card)}>
-                  <h2>{card.name}</h2>
-                  <div className="image-container">
-                    <img src={card.image} alt={card.name} className="card-image" />
-                  </div>
-                  <p className="card-description">{card.description}</p>
-                  <p className="card-keywords"><strong>Keywords:</strong> {card.keywords}</p>
+          {isGeneratingCard ? (
+            <div className="loading-page">
+              {/* <h2>Generating Card...</h2> */}
+              <img src={loadingImage} alt="Loading" className="loading-image" />
+            </div>
+          ) : (
+            <>
+              {selectedCards.length > 0 && (
+                <div className="card-container">
+                  {selectedCards.map((card) => (
+                    <div className="card" key={card.name} onClick={() => openCardInNewTab(card)}>
+                      <h2>{card.name}</h2>
+                      <div className="image-container">
+                        <img src={card.image} alt={card.name} className="card-image" />
+                      </div>
+                      <p className="card-description">{card.description}</p>
+                      <p className="card-keywords"><strong>Keywords:</strong> {card.keywords}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          )}
-          {randomCard && (
-            <div className="card random-card" onClick={() => openCardInNewTab(randomCard)}>
-              <h2>{randomCard.name}</h2>
-              <div className="image-container">
-                <img src={randomCard.image} alt={randomCard.name} className="card-image" />
-              </div>
-              <p className="card-description">{randomCard.description}</p>
-              <p className="card-keywords"><strong>Keywords:</strong> {randomCard.keywords}</p>
-            </div>
-          )}
-          {showNewReadingButton && (
-            <button className="button new-reading-button" onClick={handleNewReading}>New Reading</button>
+              )}
+              {randomCard && (
+                <div className="card random-card" onClick={() => openCardInNewTab(randomCard)}>
+                  <h2>{randomCard.name}</h2>
+                  <div className="image-container">
+                    <img src={randomCard.image} alt={randomCard.name} className="card-image" />
+                  </div>
+                  <p className="card-description">{randomCard.description}</p>
+                  <p className="card-keywords"><strong>Keywords:</strong> {randomCard.keywords}</p>
+                </div>
+              )}
+              {showNewReadingButton && (
+                <button className="button new-reading-button" onClick={handleNewReading}>New Reading</button>
+              )}
+            </>
           )}
         </div>
       )}

@@ -524,7 +524,7 @@ const tarotCards = [
     },
     {
         name: 'Page of Pentacles',
-        description: 'Page of Pentacles represents a youthful and curious individual who is eager to learn, explore, and embark on new ventures, symbolizing the potential for practicality, groundedness, and the initial stages of manifesting goals in the realm of finances and material possessions.',
+        description: 'Page of Pentacles represents a young, ambitious individual who is eager to learn and develop practical skills while also symbolizing the potential for financial opportunities and growth.',
         keywords: 'Youthful, Curiosity, Practicality',
         image: PageOfPentacles
     },
