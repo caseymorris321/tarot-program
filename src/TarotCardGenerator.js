@@ -1,4 +1,4 @@
-import React, { useState, useMemo,  } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import tarotCards from './TarotCards';
 import tarotDeckCover from './images/TarotDeckCover.png';
 import loadingImage from './images/loading.gif';
@@ -11,6 +11,12 @@ function TarotCardGenerator() {
   const [isGeneratingCard, setIsGeneratingCard] = useState(false);
   const [firstCardGenerated, setFirstCardGenerated] = useState(false);
   const [showNewReadingButton, setShowNewReadingButton] = useState(false);
+
+  useEffect(() => {
+    // Preload the tarotDeckCover image
+    const image = new Image();
+    image.src = tarotDeckCover;
+  }, []);
 
 
   const handleInputChange = (event) => {
