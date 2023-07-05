@@ -96,7 +96,7 @@ h1 {
   background-color: #4caf50;
   margin-top: 10px;
   width: 90%;
-  max-width: 400px;
+  max-width: 300px;
   font-size: 30px;
 }
 
@@ -244,7 +244,7 @@ h1 {
 
 .loading-image {
   animation: fadeInOut 1.5s ease-in-out infinite;
-  width: 50%; /* Adjust the width as desired */
+  width: 80%; /* Adjust the width as desired */
   height: auto;
 }
 
@@ -271,12 +271,19 @@ h1 {
   }
 
   .start-button {
-    font-size: 40px;
+    font-size: 30px;
     width: 90%;
     max-width: 300px;
   }
 
   .card-container {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .cover-image {
+    width: 80%; /* Adjust the width as desired */
+    height: auto;
   }
 }
