@@ -277,6 +277,10 @@ h1 {
     max-height: 100px; /* Adjust the maximum height for small screens */
   }
 
+  .cover-image-container {
+    height: 50vh; /* Adjust the height for small screens */
+  }
+
   .card-container {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
