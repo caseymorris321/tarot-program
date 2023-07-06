@@ -7,13 +7,8 @@ const urlsToCache = [
   '/images/TarotDeckCover.png',
   '/images/loading.png',
   '/images/loading-multiple.png',
-  ...getImageUrls('src/images/')
+  // Add URLs of other images used in your app
 ];
-
-function getImageUrls(directory) {
-  const context = require.context(directory, true, /\.(png|jpg|jpeg|gif|svg)$/);
-  return context.keys().map(context);
-}
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
