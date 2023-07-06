@@ -48,10 +48,9 @@ h1 {
 
 .input-label {
   margin-right: 10px;
-  color: #6a4ba1;
+  color: #2e8a31;
   font-size: 20px;
   margin-bottom: 5px;
-  color: #4caf50
 }
 
 .input-field {
@@ -93,7 +92,7 @@ h1 {
 
 
 .start-button {
-  background-color: #4caf50;
+  background-color: #4e388c;
   border: 2px solid yellow;
   margin-top: 20px;
   width: 90%;
@@ -102,16 +101,16 @@ h1 {
 }
 
 .start-button:hover {
-  background-color: #0e7a12
+  background-color: #3a2574
 }
 
 .select-button {
-  background-color: #4caf50;
+  background-color: #2e8a31;
   border: 2px solid white;
 }
 
 .select-button:hover {
-  background-color: #0e7a12;
+  background-color: #116814;
 }
 
 .new-reading-button {
