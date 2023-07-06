@@ -162,7 +162,7 @@ function TarotCardGenerator() {
           <button className="button start-button" onClick={() => setFirstCardGenerated(true)}>
             Start Reading
           </button>
-          <img src={tarotDeckCover} alt="Tarot Deck Cover" className="cover-image" />
+          <img src={tarotDeckCover} alt="Tarot Deck Cover" className="cover-image" width="512" height="512" />
           <a href="https://paypal.me/tarotgenerator?country.x=US&locale.x=en_US" className="button donate-button">
             Donate
           </a>
