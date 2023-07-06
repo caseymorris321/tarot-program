@@ -25,7 +25,7 @@ fs.readdir(imagesDir, (err, files) => {
 
   // Add image files to the cache list
   files.forEach((file) => {
-    const filePath = path.join('src/images', file);
+    const filePath = path.join('src/images', file).replace(/\\/g, '/');
     cacheList.push(filePath);
   });
 
