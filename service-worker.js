@@ -2,11 +2,13 @@ const CACHE_NAME = 'tarot-card-generator-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/TarotCardGenerator.css',
-  '/TarotCardGenerator.js',
-  '/images/TarotDeckCover.png',
-  '/images/loading.png',
-  '/images/loading-multiple.png',
+  '/static/css/main.chunk.css',
+  '/static/js/bundle.js',
+  '/static/js/vendors~main.chunk.js',
+  '/favicon.ico',
+  '/logo192.png',
+  '/logo512.png',
+  '/manifest.json',
   // Add other URLs of files you want to cache
 ];
 
