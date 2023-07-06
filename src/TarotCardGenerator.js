@@ -1,14 +1,16 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import tarotCards from './TarotCards';
 import tarotDeckCover from './images/TarotDeckCover.png';
-import loadingImage from './images/loading.gif';
+import loadingImage from './images/loading.png';
+import loadingMultipleImage from './images/loadings.png';
 import './TarotCardGenerator.css';
 
 function TarotCardGenerator() {
   const [selectedCards, setSelectedCards] = useState([]);
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
   const [randomCard, setRandomCard] = useState(null);
   const [isGeneratingCard, setIsGeneratingCard] = useState(false);
+  const [isDrawingMultipleCards, setIsDrawingMultipleCards] = useState(false);
   const [firstCardGenerated, setFirstCardGenerated] = useState(false);
   const [showNewReadingButton, setShowNewReadingButton] = useState(false);
 
@@ -17,7 +19,6 @@ function TarotCardGenerator() {
     const image = new Image();
     image.src = tarotDeckCover;
   }, []);
-
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -28,11 +29,12 @@ function TarotCardGenerator() {
       const numCards = parseInt(inputValue);
 
       if (numCards <= 0 || numCards > tarotCards.length) {
-        alert("Invalid number of cards. Please enter a value between 1 and " + tarotCards.length);
+        alert('Invalid number of cards. Please enter a value between 1 and ' + tarotCards.length);
         return;
       }
 
       setIsGeneratingCard(true);
+      setIsDrawingMultipleCards(numCards > 1);
 
       setTimeout(() => {
         const indices = new Set();
@@ -48,7 +50,7 @@ function TarotCardGenerator() {
 
         setSelectedCards(cards);
         setRandomCard(null);
-        setInputValue("");
+        setInputValue('');
         setFirstCardGenerated(true);
         setShowNewReadingButton(true);
 
@@ -59,24 +61,26 @@ function TarotCardGenerator() {
 
   const handleGenerateRandomCard = () => {
     setIsGeneratingCard(true);
-
+    setIsDrawingMultipleCards(false);
+  
     setTimeout(() => {
       const currentCardIndex = randomCard ? tarotCards.findIndex((card) => card.name === randomCard.name) : -1;
-
+  
       let newIndex = Math.floor(Math.random() * tarotCards.length);
       while (newIndex === currentCardIndex) {
         newIndex = Math.floor(Math.random() * tarotCards.length);
       }
-
+  
       const newRandomCard = tarotCards[newIndex];
       setRandomCard(newRandomCard);
       setSelectedCards([]);
       setFirstCardGenerated(true);
       setShowNewReadingButton(true);
-
+  
       setIsGeneratingCard(false);
     }, 2000);
   };
+  
 
   const handleNewReading = () => {
     setSelectedCards([]);
@@ -86,7 +90,7 @@ function TarotCardGenerator() {
   };
 
   const openCardInNewTab = (card) => {
-    const newTab = window.open("", "_blank");
+    const newTab = window.open('', '_blank');
     newTab.document.open();
     newTab.document.write(`
       <html>
@@ -106,7 +110,7 @@ function TarotCardGenerator() {
               border: 1px solid #ccc;
               text-align: center;
             }
-            .card h2 {
+           .card h2 {
               margin-top: 0;
             }
             .card img {
@@ -159,7 +163,9 @@ function TarotCardGenerator() {
             Start Reading
           </button>
           <img src={tarotDeckCover} alt="Tarot Deck Cover" className="cover-image" />
-          <a href="https://paypal.me/tarotgenerator?country.x=US&locale.x=en_US" className="button donate-button">Donate</a>
+          <a href="https://paypal.me/tarotgenerator?country.x=US&locale.x=en_US" className="button donate-button">
+            Donate
+          </a>
         </div>
       ) : (
         <div className="content">
@@ -178,7 +184,11 @@ function TarotCardGenerator() {
           </div>
           {isGeneratingCard ? (
             <div className="loading-page">
-              <img src={loadingImage} alt="Loading" className="loading-image" />
+              <img
+                src={isDrawingMultipleCards ? loadingMultipleImage : loadingImage}
+                alt="Loading"
+                className="loading-image"
+              />
             </div>
           ) : (
             <>
