@@ -19,20 +19,7 @@ function TarotCardGenerator() {
     const image = new Image();
     image.src = tarotDeckCover;
   }, []);
-
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then((registration) => {
-          console.log('Service Worker registered:', registration);
-        })
-        .catch((error) => {
-          console.error('Service Worker registration failed:', error);
-        });
-    });
-  }
   
-
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
