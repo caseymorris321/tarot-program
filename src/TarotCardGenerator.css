@@ -83,7 +83,8 @@ h1 {
 }
 
 .random-button{
-  background-color: #4e388c
+  background-color: #4e388c;
+  border: 2px solid white;
 }
 
 .random-button:hover {
@@ -94,7 +95,6 @@ h1 {
 
 .start-button {
   background-color: #4caf50;
-  color: #fff;
   border: 2px solid yellow;
   margin-top: 10px;
   width: 90%;
@@ -108,17 +108,7 @@ h1 {
 
 .select-button {
   background-color: #4caf50;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 10px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  border: 2px solid white;
 }
 
 .select-button:hover {
@@ -128,7 +118,7 @@ h1 {
 .new-reading-button {
   background-color: #a72e2e;
   color: #fff;
-  border: none;
+  border: 2px solid white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -146,7 +136,7 @@ h1 {
 .donate-button {
   background-color: #a72e2e;
   color: #fff;
-  border: none;
+  border: 2px solid white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
