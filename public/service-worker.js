@@ -11,9 +11,9 @@ const urlsToCache = [
 ];
 
 function getImageUrls(directory) {
-    const context = require.context(directory, true, /\.(png|jpg|jpeg|gif|svg)$/);
-    return context.keys().map(context);
-  }
+  const context = require.context(directory, true, /\.(png|jpg|jpeg|gif|svg)$/);
+  return context.keys().map(context);
+}
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -22,12 +22,12 @@ self.addEventListener('install', (event) => {
     })
   );
 });
+
 self.addEventListener('fetch', (event) => {
-    event.respondWith(
-      caches.match(event.request).then((response) => {
-        // Return the cached response if available, or fetch from network
-        return response || fetch(event.request);
-      })
-    );
-  });
-  
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      // Return the cached response if available, or fetch from network
+      return response || fetch(event.request);
+    })
+  );
+});
