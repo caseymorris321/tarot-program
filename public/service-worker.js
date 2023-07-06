@@ -2,7 +2,6 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open('your-cache-name').then((cache) => {
       return cache.addAll([
-        // Add the URLs of the assets you want to cache
         '/',
         '/index.html',
         '/manifest.json',
