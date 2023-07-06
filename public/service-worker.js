@@ -1,3 +1,5 @@
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js');
+
 const CACHE_NAME = 'tarot-card-generator-cache-v1';
 const urlsToCache = [
   '/',
@@ -11,15 +13,28 @@ const urlsToCache = [
 ];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(urlsToCache))
-  );
+  const preCache = async () => {
+    const cache = await caches.open(CACHE_NAME);
+    await cache.addAll(urlsToCache);
+  };
+
+  event.waitUntil(preCache());
 });
 
+self.addEventListener('activate', (event) => {
+  event.waitUntil(self.clients.claim());
+});
+
+const networkFirstStrategy = new workbox.strategies.NetworkFirst();
+workbox.routing.registerRoute('/', networkFirstStrategy);
+workbox.routing.registerRoute('/index.html', networkFirstStrategy);
+workbox.routing.registerRoute('/TarotCardGenerator.css', networkFirstStrategy);
+workbox.routing.registerRoute('/TarotCardGenerator.js', networkFirstStrategy);
+workbox.routing.registerRoute('/images/TarotDeckCover.png', networkFirstStrategy);
+workbox.routing.registerRoute('/images/loading.png', networkFirstStrategy);
+workbox.routing.registerRoute('/images/loading-multiple.png', networkFirstStrategy);
+// Add routes for other images used in your app
+
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => response || fetch(event.request))
-  );
+  event.respondWith(networkFirstStrategy.handle({ event }));
 });
