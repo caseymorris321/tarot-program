@@ -51,23 +51,24 @@
     The build step will place the bundled scripts into the <body> tag.
 
     To begin development, run `npm start` or `yarn start`.
-    To create a production bundle, use `npm run build` or `yarn build`.   
-  -->
+    To create a production bundle, use `npm run build` or `yarn build`.
 
+    
+  -->
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then((registration) => {
-            console.log('Service Worker registered with scope:', registration.scope);
-          })
-          .catch((error) => {
-            console.error('Service Worker registration failed:', error);
-          });
-      });
-    }
-  </script>
-  
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then((registration) => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
+        });
+    });
+  }
+</script>
+
 </body>
 
 </html>
