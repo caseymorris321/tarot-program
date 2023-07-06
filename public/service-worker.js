@@ -6,11 +6,10 @@ self.addEventListener('install', (event) => {
         '/',
         '/index.html',
         '/manifest.json',
-        '/src/TarotCardGenerator.css',
-        '/src/App.js',
-        'src/TarotCardGenerator.js',
-        'src/index.js',
-        'src/TarotCards.js',
+        '/css/style.css',
+        '/js/app.js',
+        '/images/logo.png',
+        // Add other assets like CSS, JavaScript files, and images
       ]);
     })
   );
