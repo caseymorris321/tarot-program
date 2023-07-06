@@ -5,8 +5,6 @@ self.addEventListener('install', (event) => {
         '/',
         '/index.html',
         '/manifest.json',
-        '/src/TarotCardGenerator.js',
-        '/src/TarotCardGenerator.css',
         '/src/App.js',
         '/src/index.js'
         // Add other assets like CSS, JavaScript files, and images
