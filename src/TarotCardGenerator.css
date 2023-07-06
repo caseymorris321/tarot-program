@@ -94,6 +94,8 @@ h1 {
 
 .start-button {
   background-color: #4caf50;
+  color: #fff;
+  border: 2px solid yellow;
   margin-top: 10px;
   width: 90%;
   max-width: 300px;
