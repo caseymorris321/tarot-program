@@ -1,19 +1,15 @@
 const CACHE_NAME = 'tarot-card-generator-cache-v1';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/TarotCardGenerator.css',
-  '/TarotCardGenerator.js',
-  '/images/TarotDeckCover.png',
-  '/images/loading.png',
-  '/images/loading-multiple.png',
-  // Add URLs of other images used in your app
-];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache);
+      return cache.addAll([
+        '/',
+        '/index.html',
+        '/TarotCardGenerator.css',
+        '/TarotCardGenerator.js',
+        ...getImagesToCache(),
+      ]);
     })
   );
 });
@@ -26,3 +22,8 @@ self.addEventListener('fetch', (event) => {
     })
   );
 });
+
+function getImagesToCache() {
+  const images = require.context('./src/images', false, /\.(png|jpe?g|gif|svg)$/);
+  return images.keys().map(images);
+}
