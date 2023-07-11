@@ -6,7 +6,7 @@
   min-height: 100vh;
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
-  padding: 7px;
+  padding: 2px;
 }
 
 .h1-container h1 {
@@ -26,7 +26,7 @@ h1 {
   align-items: center;
   padding-bottom: 20px;
   background-color: #fff;
-  padding: 20px;
+  padding: 5px;
   border-radius: 8px;
   width: 90%;
   max-width: 1000px;
@@ -44,7 +44,6 @@ h1 {
   align-items: center;
   margin-bottom: 10px;
   width: 100%;
-  /* Added width to occupy full width */
 }
 
 .input-label {
@@ -53,18 +52,15 @@ h1 {
   font-size: 20px;
   margin-bottom: 5px;
   text-align: center;
-  /* Added text-align center for label */
 }
 
 .input-field {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 15%;
-  /* Changed width to occupy full width */
+  width: 18%;
   font-size: 14px;
   box-sizing: border-box;
-  /* Added box-sizing border-box for correct width calculation */
 }
 
 
@@ -80,7 +76,7 @@ h1 {
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  margin: 5px;
+  margin: 1px;
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
@@ -175,6 +171,10 @@ h1 {
   cursor: pointer;
 }
 
+.card.reversed .card-image {
+  transform: rotateX(180deg);
+}
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -231,6 +231,16 @@ h1 {
   justify-content: center;
 }
 
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 5px;
+}
+
 .loading-page {
   display: flex;
   flex-direction: column;
@@ -242,6 +252,8 @@ h1 {
   width: 80%;
   height: auto;
 }
+
+
 
 @keyframes fadeInOut {
   0% {

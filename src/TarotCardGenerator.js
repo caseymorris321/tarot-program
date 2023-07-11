@@ -13,74 +13,91 @@ function TarotCardGenerator() {
   const [isDrawingMultipleCards, setIsDrawingMultipleCards] = useState(false);
   const [firstCardGenerated, setFirstCardGenerated] = useState(false);
   const [showNewReadingButton, setShowNewReadingButton] = useState(false);
+  const [includeReversed, setIncludeReversed] = useState(false);
+
 
   useEffect(() => {
     // Preload the tarotDeckCover image
     const image = new Image();
     image.src = tarotDeckCover;
   }, []);
-  
+
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+    setInputValue(parseInt(event.target.value));
   };
 
   const handleSelectCards = () => {
-    if (inputValue) {
-      const numCards = parseInt(inputValue);
+    if (!inputValue) {
+      alert('Please enter the number of cards.');
+      return;
+    }
 
-      if (numCards <= 0 || numCards > tarotCards.length) {
-        alert('Invalid number of cards. Please enter a value between 1 and ' + tarotCards.length);
-        return;
+    const numCards = parseInt(inputValue);
+
+    if (numCards <= 0 || numCards > tarotCards.length) {
+      alert('Invalid number of cards. Please enter a value between 1 and ' + tarotCards.length);
+      return;
+    }
+
+    setIsGeneratingCard(true);
+    setIsDrawingMultipleCards(numCards > 1);
+
+    setTimeout(() => {
+      const indices = new Set();
+      const cards = [];
+
+      while (cards.length < numCards) {
+        const index = Math.floor(Math.random() * tarotCards.length);
+        if (!indices.has(index)) {
+          const newCard = { ...tarotCards[index] };
+          if (includeReversed && Math.random() < 0.5) {
+            newCard.isReversed = true;
+          } else {
+            newCard.isReversed = false;
+          }
+          cards.push(newCard);
+          indices.add(index);
+        }
       }
 
-      setIsGeneratingCard(true);
-      setIsDrawingMultipleCards(numCards > 1);
+      setSelectedCards(cards);
+      setRandomCard(null);
+      setInputValue('');
+      setFirstCardGenerated(true);
+      setShowNewReadingButton(true);
 
-      setTimeout(() => {
-        const indices = new Set();
-        const cards = [];
-
-        while (cards.length < numCards) {
-          const index = Math.floor(Math.random() * tarotCards.length);
-          if (!indices.has(index)) {
-            cards.push(tarotCards[index]);
-            indices.add(index);
-          }
-        }
-
-        setSelectedCards(cards);
-        setRandomCard(null);
-        setInputValue('');
-        setFirstCardGenerated(true);
-        setShowNewReadingButton(true);
-
-        setIsGeneratingCard(false);
-      }, 2000);
-    }
+      setIsGeneratingCard(false);
+    }, 2000);
   };
 
   const handleGenerateRandomCard = () => {
     setIsGeneratingCard(true);
     setIsDrawingMultipleCards(false);
-  
+
     setTimeout(() => {
       const currentCardIndex = randomCard ? tarotCards.findIndex((card) => card.name === randomCard.name) : -1;
-  
+
       let newIndex = Math.floor(Math.random() * tarotCards.length);
       while (newIndex === currentCardIndex) {
         newIndex = Math.floor(Math.random() * tarotCards.length);
       }
-  
-      const newRandomCard = tarotCards[newIndex];
+
+      const newRandomCard = { ...tarotCards[newIndex] };
+      if (includeReversed && Math.random() < 0.5) {
+        newRandomCard.isReversed = true;
+      } else {
+        newRandomCard.isReversed = false;
+      }
       setRandomCard(newRandomCard);
       setSelectedCards([]);
       setFirstCardGenerated(true);
       setShowNewReadingButton(true);
-  
+
       setIsGeneratingCard(false);
     }, 2000);
   };
-  
+
+
 
   const handleNewReading = () => {
     setSelectedCards([]);
@@ -116,6 +133,7 @@ function TarotCardGenerator() {
             .card img {
               max-width: 100%;
               height: auto;
+              ${card.isReversed ? 'transform: rotateX(180deg);' : ''}
             }
             .card p {
               margin: 10px 0;
@@ -126,8 +144,8 @@ function TarotCardGenerator() {
           <div class="card">
             <h2>${card.name}</h2>
             <img src="${card.image}" alt="${card.name}">
-            <p>${card.description}</p>
-            <p><strong>Keywords:</strong> ${card.keywords}</p>
+            <p>${card.isReversed ? card.reversedDescription : card.description}</p>
+            <p><strong>Keywords:</strong> ${card.isReversed ? card.reversedKeywords : card.keywords}</p>
           </div>
         </body>
       </html>
@@ -135,22 +153,30 @@ function TarotCardGenerator() {
     newTab.document.close();
   };
 
+
   const renderedSelectedCards = useMemo(
     () =>
       selectedCards.map((card) => (
-        <div className="card" key={card.name} onClick={() => openCardInNewTab(card)}>
+        <div
+          className={`card ${card.isReversed ? 'reversed' : ''}`}
+          key={card.name}
+          onClick={() => openCardInNewTab(card)}
+        >
           <h2>{card.name}</h2>
           <div className="image-container">
             <img src={card.image} alt={card.name} className="card-image" />
           </div>
-          <p className="card-description">{card.description}</p>
+          <p className="card-description">
+            {card.isReversed ? card.reversedDescription : card.description}
+          </p>
           <p className="card-keywords">
-            <strong>Keywords:</strong> {card.keywords}
+            <strong>Keywords:</strong> {card.isReversed ? card.reversedKeywords : card.keywords}
           </p>
         </div>
       )),
     [selectedCards]
   );
+
 
   return (
     <div className="container">
@@ -169,6 +195,16 @@ function TarotCardGenerator() {
         </div>
       ) : (
         <div className="content">
+          <div className="checkbox-container">
+            <input
+              type="checkbox"
+              id="reversedCheckbox"
+              checked={includeReversed}
+              onChange={(event) => setIncludeReversed(event.target.checked)}
+            />
+            <label htmlFor="reversedCheckbox">Include Reversed Cards</label>
+          </div>
+
           <button className="button random-button" onClick={handleGenerateRandomCard}>
             Draw Random Card
           </button>
@@ -176,12 +212,13 @@ function TarotCardGenerator() {
           <div className="input-container">
             <label className="input-label">
               Enter number of cards:&nbsp;
-              <input className="input-field" type="text" value={inputValue} onChange={handleInputChange} />
+              <input className="input-field" type="number" value={inputValue} onChange={handleInputChange} min="1" max="78" />
             </label>
             <button className="button select-button" onClick={handleSelectCards}>
               Draw Random Cards
             </button>
           </div>
+
           {isGeneratingCard ? (
             <div className="loading-page">
               <img
@@ -194,14 +231,19 @@ function TarotCardGenerator() {
             <>
               {renderedSelectedCards.length > 0 && <div className="card-container">{renderedSelectedCards}</div>}
               {randomCard && (
-                <div className="card random-card" onClick={() => openCardInNewTab(randomCard)}>
+                <div
+                  className={`card random-card ${randomCard.isReversed ? 'reversed' : ''}`}
+                  onClick={() => openCardInNewTab(randomCard)}
+                >
                   <h2>{randomCard.name}</h2>
                   <div className="image-container">
                     <img src={randomCard.image} alt={randomCard.name} className="card-image" />
                   </div>
-                  <p className="card-description">{randomCard.description}</p>
+                  <p className="card-description">
+                    {randomCard.isReversed ? randomCard.reversedDescription : randomCard.description}
+                  </p>
                   <p className="card-keywords">
-                    <strong>Keywords:</strong> {randomCard.keywords}
+                    <strong>Keywords:</strong> {randomCard.isReversed ? randomCard.reversedKeywords : randomCard.keywords}
                   </p>
                 </div>
               )}
