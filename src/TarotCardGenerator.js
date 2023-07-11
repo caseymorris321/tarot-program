@@ -73,18 +73,19 @@ function TarotCardGenerator() {
   const handleGenerateRandomCard = () => {
     setIsGeneratingCard(true);
     setIsDrawingMultipleCards(false);
-
+  
     setTimeout(() => {
       const currentCardIndex = randomCard ? tarotCards.findIndex((card) => card.name === randomCard.name) : -1;
-
+  
       let newIndex = Math.floor(Math.random() * tarotCards.length);
       while (newIndex === currentCardIndex) {
         newIndex = Math.floor(Math.random() * tarotCards.length);
       }
-
+  
       const newRandomCard = { ...tarotCards[newIndex] };
       if (includeReversed && Math.random() < 0.5) {
         newRandomCard.isReversed = true;
+        newRandomCard.name = `${newRandomCard.name} (Reversed)`;
       } else {
         newRandomCard.isReversed = false;
       }
@@ -92,10 +93,11 @@ function TarotCardGenerator() {
       setSelectedCards([]);
       setFirstCardGenerated(true);
       setShowNewReadingButton(true);
-
+  
       setIsGeneratingCard(false);
     }, 2000);
   };
+  
 
 
 
@@ -156,26 +158,31 @@ function TarotCardGenerator() {
 
   const renderedSelectedCards = useMemo(
     () =>
-      selectedCards.map((card) => (
-        <div
-          className={`card ${card.isReversed ? 'reversed' : ''}`}
-          key={card.name}
-          onClick={() => openCardInNewTab(card)}
-        >
-          <h2>{card.name}</h2>
-          <div className="image-container">
-            <img src={card.image} alt={card.name} className="card-image" />
+      selectedCards.map((card) => {
+        const cardName = card.isReversed ? `${card.name} (Reversed)` : card.name;
+  
+        return (
+          <div
+            className={`card ${card.isReversed ? 'reversed' : ''}`}
+            key={card.name}
+            onClick={() => openCardInNewTab(card)}
+          >
+            <h2>{cardName}</h2>
+            <div className="image-container">
+              <img src={card.image} alt={card.name} className="card-image" />
+            </div>
+            <p className="card-description">
+              {card.isReversed ? card.reversedDescription : card.description}
+            </p>
+            <p className="card-keywords">
+              <strong>Keywords:</strong> {card.isReversed ? card.reversedKeywords : card.keywords}
+            </p>
           </div>
-          <p className="card-description">
-            {card.isReversed ? card.reversedDescription : card.description}
-          </p>
-          <p className="card-keywords">
-            <strong>Keywords:</strong> {card.isReversed ? card.reversedKeywords : card.keywords}
-          </p>
-        </div>
-      )),
+        );
+      }),
     [selectedCards]
   );
+  
 
 
   return (
