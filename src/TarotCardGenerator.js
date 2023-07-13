@@ -14,7 +14,7 @@ function TarotCardGenerator() {
   const [firstCardGenerated, setFirstCardGenerated] = useState(false);
   const [showNewReadingButton, setShowNewReadingButton] = useState(false);
   const [includeReversed, setIncludeReversed] = useState(false);
-
+  const [showDescription, setShowDescription] = useState(false);
 
   useEffect(() => {
     // Preload the tarotDeckCover image
@@ -55,7 +55,7 @@ function TarotCardGenerator() {
           } else {
             newCard.isReversed = false;
           }
-          cards.push(newCard);
+          cards.push({ ...newCard, showDescription: false });
           indices.add(index);
         }
       }
@@ -67,21 +67,22 @@ function TarotCardGenerator() {
       setShowNewReadingButton(true);
 
       setIsGeneratingCard(false);
+      setShowDescription(false); // Reset showDescription state
     }, 2000);
   };
 
   const handleGenerateRandomCard = () => {
     setIsGeneratingCard(true);
     setIsDrawingMultipleCards(false);
-  
+
     setTimeout(() => {
       const currentCardIndex = randomCard ? tarotCards.findIndex((card) => card.name === randomCard.name) : -1;
-  
+
       let newIndex = Math.floor(Math.random() * tarotCards.length);
       while (newIndex === currentCardIndex) {
         newIndex = Math.floor(Math.random() * tarotCards.length);
       }
-  
+
       const newRandomCard = { ...tarotCards[newIndex] };
       if (includeReversed && Math.random() < 0.5) {
         newRandomCard.isReversed = true;
@@ -89,16 +90,15 @@ function TarotCardGenerator() {
       } else {
         newRandomCard.isReversed = false;
       }
-      setRandomCard(newRandomCard);
+      setRandomCard({ ...newRandomCard, showDescription: false });
       setSelectedCards([]);
       setFirstCardGenerated(true);
       setShowNewReadingButton(true);
-  
+
       setIsGeneratingCard(false);
+      setShowDescription(false); // Reset showDescription state
     }, 2000);
   };
-  
-
 
 
   const handleNewReading = () => {
@@ -108,82 +108,71 @@ function TarotCardGenerator() {
     setShowNewReadingButton(false);
   };
 
-  const openCardInNewTab = (card) => {
-    const newTab = window.open('', '_blank');
-    newTab.document.open();
-    newTab.document.write(`
-      <html>
-        <head>
-          <title>${card.name}</title>
-          <style>
-            body {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              height: 100vh;
-              margin: 0;
-              font-family: Arial, sans-serif;
-            }
-            .card {
-              padding: 20px;
-              border: 1px solid #ccc;
-              text-align: center;
-            }
-           .card h2 {
-              margin-top: 0;
-            }
-            .card img {
-              max-width: 100%;
-              height: auto;
-              ${card.isReversed ? 'transform: rotateX(180deg);' : ''}
-            }
-            .card p {
-              margin: 10px 0;
-            }
-          </style>
-        </head>
-        <body>
-          <div class="card">
-            <h2>${card.name}</h2>
-            <img src="${card.image}" alt="${card.name}">
-            <p>${card.isReversed ? card.reversedDescription : card.description}</p>
-            <p><strong>Keywords:</strong> ${card.isReversed ? card.reversedKeywords : card.keywords}</p>
+  const renderedSelectedCards = useMemo(() => {
+    if (selectedCards.length === 1) {
+      const card = selectedCards[0];
+      const cardName = card.isReversed ? `${card.name} (Reversed)` : card.name;
+
+      return (
+        <div className={`card ${card.isReversed ? 'reversed' : ''}`} key={card.name}>
+          <h2>{cardName}</h2>
+          <div className="image-container">
+            <img src={card.image} alt={card.name} className="card-image" />
           </div>
-        </body>
-      </html>
-    `);
-    newTab.document.close();
+          {card.description && (
+            <>
+              <p className="card-description">
+                {showDescription ? (card.isReversed ? card.reversedDescription : card.description) : ''}
+              </p>
+              <button
+                className="button show-description-button"
+                onClick={() => toggleShowDescription(card)}
+              >
+                {card.showDescription ? 'Hide Description' : 'Show Description'}
+              </button>
+            </>
+          )}
+        </div>
+      );
+    }
+
+    return selectedCards.map((card) => {
+      const cardName = card.isReversed ? `${card.name} (Reversed)` : card.name;
+
+      return (
+        <div className={`card ${card.isReversed ? 'reversed' : ''}`} key={card.name}>
+          <h2>{cardName}</h2>
+          <div className="image-container">
+            <img src={card.image} alt={card.name} className="card-image" />
+          </div>
+          {card.description && (
+            <>
+              <p className="card-description">
+                {card.showDescription ? (card.isReversed ? card.reversedDescription : card.description) : ''}
+              </p>
+              <button
+                className="button show-description-button"
+                onClick={() => toggleShowDescription(card)}
+              >
+                {card.showDescription ? 'Hide Description' : 'Show Description'}
+              </button>
+            </>
+          )}
+        </div>
+      );
+    });
+  }, [selectedCards, showDescription]);
+
+  const toggleShowDescription = (card) => {
+    setSelectedCards((prevCards) =>
+      prevCards.map((prevCard) => {
+        if (prevCard.name === card.name) {
+          return { ...prevCard, showDescription: !prevCard.showDescription };
+        }
+        return prevCard;
+      })
+    );
   };
-
-
-  const renderedSelectedCards = useMemo(
-    () =>
-      selectedCards.map((card) => {
-        const cardName = card.isReversed ? `${card.name} (Reversed)` : card.name;
-  
-        return (
-          <div
-            className={`card ${card.isReversed ? 'reversed' : ''}`}
-            key={card.name}
-            onClick={() => openCardInNewTab(card)}
-          >
-            <h2>{cardName}</h2>
-            <div className="image-container">
-              <img src={card.image} alt={card.name} className="card-image" />
-            </div>
-            <p className="card-description">
-              {card.isReversed ? card.reversedDescription : card.description}
-            </p>
-            <p className="card-keywords">
-              <strong>Keywords:</strong> {card.isReversed ? card.reversedKeywords : card.keywords}
-            </p>
-          </div>
-        );
-      }),
-    [selectedCards]
-  );
-  
-
 
   return (
     <div className="container">
@@ -219,7 +208,14 @@ function TarotCardGenerator() {
           <div className="input-container">
             <label className="input-label">
               Enter number of cards:&nbsp;
-              <input className="input-field" type="number" value={inputValue} onChange={handleInputChange} min="1" max="78" />
+              <input
+                className="input-field"
+                type="number"
+                value={inputValue}
+                onChange={handleInputChange}
+                min="1"
+                max="78"
+              />
             </label>
             <button className="button select-button" onClick={handleSelectCards}>
               Draw Random Cards
@@ -238,20 +234,24 @@ function TarotCardGenerator() {
             <>
               {renderedSelectedCards.length > 0 && <div className="card-container">{renderedSelectedCards}</div>}
               {randomCard && (
-                <div
-                  className={`card random-card ${randomCard.isReversed ? 'reversed' : ''}`}
-                  onClick={() => openCardInNewTab(randomCard)}
-                >
+                <div className={`card random-card ${randomCard.isReversed ? 'reversed' : ''}`}>
                   <h2>{randomCard.name}</h2>
                   <div className="image-container">
                     <img src={randomCard.image} alt={randomCard.name} className="card-image" />
                   </div>
-                  <p className="card-description">
-                    {randomCard.isReversed ? randomCard.reversedDescription : randomCard.description}
-                  </p>
-                  <p className="card-keywords">
-                    <strong>Keywords:</strong> {randomCard.isReversed ? randomCard.reversedKeywords : randomCard.keywords}
-                  </p>
+                  {randomCard.description && (
+                    <>
+                      <p className="card-description">
+                        {randomCard.showDescription ? (randomCard.isReversed ? randomCard.reversedDescription : randomCard.description) : ''}
+                      </p>
+                      <button
+                        className="button show-description-button"
+                        onClick={() => setRandomCard({ ...randomCard, showDescription: !randomCard.showDescription })}
+                      >
+                        {randomCard.showDescription ? 'Hide Description' : 'Show Description'}
+                      </button>
+                    </>
+                  )}
                 </div>
               )}
               {showNewReadingButton && (

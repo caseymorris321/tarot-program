@@ -1,0 +1,13 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taS2NhYA6dwbhQ==": "utter_greet",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taSWgBmlJSWpRfEQpbhMiAUAQvc0lw==": "action_listen",
+    "eJydjlEKgCAQBa/iATqBV4lYpF4i2Fbr2o949wT7F/p7A8Pw5lInUy7BQ27VcLI1pQ9id8CaD2JICm5uTpDmBG6o1ngBtA4aWRVCXf1XGLwQ3BlJac8xksBtgX2tywt4slSo": "utter_confirm_full_reading",
+    "eJydjsEJgDAQBFtJAVaQVkSOoKscxFMvFz/B3g3ox5fibxdmh23L0biyKnYKvfEi3pUrkIQZ3t0lcjJIZXOCVoalVvNuUsCOF0c2g9KF/jO8vFBsGclozDGSIgws07dT/SIj6/xcfvR3JzbEehk=": "action_generate_tarot_cards",
+    "eJytjkEKwzAMBL/iB/QF/koIQjgbY3DkVpZ7Mfl7Dcmlp4TSmwZ2Rzv1/eH6U/EmDpaKeNePg4Q3eHdCTtUgI9sqdGSSDDTvogK2XziaGZSO6G+GixWKV0M1WlvOpOAlSbw3KhRZk27fzb/4T4gQKBvIWItRYF3q3QfzB5len9s=": "action_provide_full_reading",
+    "eJytj0EKxCAMRa/iAeYEXmUYguivCDZ2YuxGevcR2s2sWkp3efDz8vPu28v0RbCS85oKW9P3gdjNsOaAnKqCR7ZVyMgkHqjWRAF0O3E0VQjt0XuGkxaCb0NVmlrOJHAhcbxWyheeksz/m4/4D4hgiFOQOilK3kmojx5YpKwp4NYHnx9NdsWh": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohPT8/JakytbY2FgAh+hxX": "utter_goodbye",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohPT8/JakytZaAKaUlJalF8TDFuE2JBQCMqTcN": "action_listen"
+  }
+}

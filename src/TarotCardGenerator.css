@@ -118,6 +118,7 @@ h1 {
 .new-reading-button {
   background-color: #a72e2e;
   color: #fff;
+  margin-top: 20px;
   border: 2px solid white;
   text-align: center;
   text-decoration: none;
@@ -168,17 +169,34 @@ h1 {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card.reversed .card-image {
   transform: rotateX(180deg);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.show-description-button {
+  background-color: #f58634;
+  color: #fff;
+  border: 2px solid white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  padding: 8px 16px;
 }
+
+.show-description-button:hover {
+  background-color: #e67217;
+}
+
 
 .card h2 {
   display: flex;
@@ -199,18 +217,12 @@ h1 {
 }
 
 .card-description {
-  font-size: 16px;
-  color: #666;
+  font-size: 14px;
+  color: #444444;
   margin: 10px 0;
   line-height: 1.4;
   padding: 0 10px;
-}
-
-.card-keywords {
-  margin: 5px 10px;
-  margin-top: 0;
-  font-size: 14px;
-  color: #888;
+  text-align: left;
 }
 
 .cover-image-container {

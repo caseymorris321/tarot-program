@@ -1,0 +1,11 @@
+nlu:
+- intent: request_full_reading
+  examples: |
+    - Can you provide a full tarot card reading?
+    - I want a reading with multiple tarot cards.
+    - Give me a reading with multiple cards.
+
+- intent: provide_card_meaning
+  examples: |
+    - What is the meaning of the {tarot_card} card?
+    - Tell me about the {tarot_card} card.
