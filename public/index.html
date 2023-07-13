@@ -26,11 +26,17 @@
     Learn how to configure a non-root public URL by running `npm run build`.
   -->
   <title>Tarot Card Generator | Free Online Tarot Card Readings</title>
+
+</head>
+
+<body>
+
   <style>
     body {
       margin: 0;
       padding: 0;
     }
+
     .container {
       display: flex;
       flex-direction: column;
@@ -42,9 +48,8 @@
       padding: 7px;
     }
   </style>
-</head>
 
-<body>
+
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <!--
@@ -60,17 +65,18 @@
     
   -->
   <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then((registration) => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch((error) => {
-          console.error('Service Worker registration failed:', error);
-        });
-    });
-  }
-</script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch((error) => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
 </body>
+
 </html>
