@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import tarotCards from './TarotCards';
+import tarotDeckCover from './images/TarotDeckCover.webp';
 import loadingImage from './images/loading.png';
 import loadingMultipleImage from './images/loadings.png';
 import './TarotCardGenerator.css';
