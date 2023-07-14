@@ -29,6 +29,32 @@
     Learn how to configure a non-root public URL by running `npm run build`.
   -->
   <title>Tarot Card Generator | Free Online Tarot Card Readings</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 7px;
+    }
+  </style>
+
+<script>
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'src/TarotCardGenerator.css';
+  link.onload = function() {
+    // CSS has been loaded
+  };
+  document.head.appendChild(link);
+</script>
 
 </head>
 
@@ -48,22 +74,6 @@
     
   -->
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      padding: 7px;
-    }
-  </style>
 
   <script>
   if ('serviceWorker' in navigator) {
