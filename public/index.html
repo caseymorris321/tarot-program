@@ -50,26 +50,23 @@
   </style>
 
   <link rel="preload" href="/static/media/TarotDeckCover.ed8e570e637bd647ef00.webp" as="image">
+  <link rel="stylesheet" href="../src/TarotCardGenerator.css" type="text/css">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="stylesheet" href="/css/f142792641ba1673be811aa68e0cf538222c4db2/static/css/main.d738c324.css"
-    type="text/css">
-
-
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Roboto:wght@400&display=swap">
 
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then((registration) => {
-            console.log('Service Worker registered with scope:', registration.scope);
-          })
-          .catch((error) => {
-            console.error('Service Worker registration failed:', error);
-          });
-      });
+    // LoadCSS function
+    function loadCSS(href, before = document.querySelector("script:first-child")) {
+      var ss = document.createElement("link");
+      ss.rel = "stylesheet";
+      ss.href = href;
+      before.parentNode.insertBefore(ss, before);
     }
-  </script>
 
+    // Load non-critical CSS asynchronously
+    loadCSS("/css/f142792641ba1673be811aa68e0cf538222c4db2/static/css/main.d738c324.css");
+  </script>
 </head>
 
 <body>
@@ -90,6 +87,19 @@
 
 
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch((error) => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
 
   <script src="/css/f142792641ba1673be811aa68e0cf538222c4db2/static/js/2.9983d532.chunk.js"></script>
   <script src="/css/f142792641ba1673be811aa68e0cf538222c4db2/static/js/main.742525b2.chunk.js"></script>
