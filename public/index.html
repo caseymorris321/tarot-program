@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
 
-  
+
 
 
   <!--
@@ -36,6 +36,7 @@
       margin: 0;
       padding: 0;
     }
+
     .container {
       display: flex;
       flex-direction: column;
@@ -47,10 +48,12 @@
       padding: 7px;
     }
   </style>
-
+  
+  <link rel="preload" href="../src/images/TarotDeckCover.webp" as="image/webp">
   <!-- Defer Non-Critical CSS -->
   <link rel="preload" href="../src/TarotCardGenerator.css" as="style">
   <link rel="stylesheet" href="../src/TarotCardGenerator.css" media="print" onload="this.media='all'">
+
 
 </head>
 
@@ -73,19 +76,20 @@
 
 
   <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then((registration) => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch((error) => {
-          console.error('Service Worker registration failed:', error);
-        });
-    });
-  }
-</script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch((error) => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
 
-<script src="../src/TarotCardGenerator.css" defer></script>
+  <script src="../src/TarotCardGenerator.css" defer></script>
 </body>
+
 </html>
