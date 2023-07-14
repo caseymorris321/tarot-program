@@ -10,10 +10,6 @@
     content="Generate random tarot cards or draw multiple cards for readings. Get insights into your life with the power of tarot." />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
-
-  
-
-
   <!--
     manifest.json provides metadata used when your web app is installed on a
     user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -46,16 +42,21 @@
     }
   </style>
 
-<script>
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = '/src/TarotCardGenerator.css';
-  link.onload = function() {
-    // CSS has been loaded
-  };
-  document.head.appendChild(link);
-</script>
+  <link rel="stylesheet" href="/src/TarotCardGenerator.css">
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch((error) => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
 </head>
 
 <body>
@@ -70,25 +71,7 @@
 
     To begin development, run `npm start` or `yarn start`.
     To create a production bundle, use `npm run build` or `yarn build`.
-
-    
   -->
-
-
-  <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then((registration) => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch((error) => {
-          console.error('Service Worker registration failed:', error);
-        });
-    });
-  }
-</script>
-  <script src="/src/TarotCardGenerator.css" defer></script>
-
 </body>
+
 </html>
