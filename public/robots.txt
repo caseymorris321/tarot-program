@@ -1,5 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
 
-Sitemap: https:/tarotgenerator.com/sitemap.xml
+Sitemap: https://tarotgenerator.com/sitemap.xml
