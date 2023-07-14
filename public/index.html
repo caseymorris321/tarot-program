@@ -48,7 +48,7 @@
       padding: 7px;
     }
   </style>
-  
+
   <link rel="preload" href="../src/images/TarotDeckCover.webp" as="image/webp">
   <!-- Defer Non-Critical CSS -->
   <link rel="preload" href="../src/TarotCardGenerator.css" as="style">
@@ -89,7 +89,15 @@
     }
   </script>
 
-  <script src="../src/TarotCardGenerator.css" defer></script>
+    <script>
+    // Defer non-critical JavaScript
+    window.addEventListener('DOMContentLoaded', function() {
+      var script = document.createElement('script');
+      script.src = '../src/TarotCardGenerator.css';
+      script.defer = true;
+      document.body.appendChild(script);
+    });
+  </script>
 </body>
 
 </html>
