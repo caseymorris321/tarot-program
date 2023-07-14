@@ -61,9 +61,10 @@
       var ss = document.createElement("link");
       ss.rel = "stylesheet";
       ss.href = href;
-      before.parentNode.insertBefore(ss, before);
+      if (before && before.parentNode) {
+        before.parentNode.insertBefore(ss, before);
+      }
     }
-
     // Load non-critical CSS asynchronously
     loadCSS("/css/f142792641ba1673be811aa68e0cf538222c4db2/static/css/main.d738c324.css");
   </script>
