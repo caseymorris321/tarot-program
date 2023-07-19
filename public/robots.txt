@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://tarotgenerator.com/sitemap.xml
